@@ -1,0 +1,30 @@
+body {
+  color: rgba($white, .9);
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+  letter-spacing: .5px;
+  background: {
+    color: darken($white, 10%);
+    image: url('../img/etched-champion-edit.jpg');
+    size: cover;
+    repeat: no-repeat;
+    position: right top;
+  }
+  font: {
+    size: 16px;
+    family: 'Merriweather', 'Times New Roman', serif;
+    weight: 300;
+  }
+  * {
+    box-sizing: border-box;
+    font-smooth: always;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-backface-visibility: hidden;
+    &:focus {
+      outline: none;
+    }
+  }
+}

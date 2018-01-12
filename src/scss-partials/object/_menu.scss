@@ -1,0 +1,129 @@
+.menu {
+  z-index: 20;
+  &.open {
+    .mobile-menu-toggle {
+      right: 80%;
+    }
+    .mobile-menu-dark-back {
+      left: 0;
+      width: 100%;
+      opacity: 1;
+    }
+    .menu-list {
+      left: 25%;
+      width: 75%;
+      opacity: 1;
+    }
+  }
+}
+.mobile-menu-toggle {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  z-index: 22;
+  color: rgba(darken($white, 10%), .9);
+  text-shadow: 1px .125rem .5rem rgba($black, .5);
+  transition: {
+    property: right;
+    duration: .5s;
+    timing-function: $cubic;
+  }
+  font-size: 2em;
+}
+.mobile-menu-dark-back {
+  background: rgba($black, .9);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  height: 100vh;
+  z-index: 21;
+  opacity: 0;
+  transition: {
+    property: opacity;
+    duration: .5s;
+    timing-function: $cubic;
+  }
+}
+.menu-list {
+  @include pseudo-list;
+  padding: 2em;
+  background: $mtg-common;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 0;
+  height: 100vh;
+  z-index: 22;
+  opacity: 0;
+  transition: {
+    property: opacity, left;
+    duration: .5s;
+    timing-function: $cubic;
+  }
+}
+.menu-item {
+  padding-bottom: .5em;
+  .step-number, .step-type {
+    transition: {
+      property: color;
+      duration: .2s;
+      timing-function: $cubic;
+    }
+  }
+  .step-number {
+    color: rgba($white, .25);
+  }
+  .step-type {
+    color: rgba($white, .75);
+    font-weight: bold;
+  }
+  .chosen-info {
+    text-align: center;
+    font-family: beleren, 'Merriweather', 'Times New Roman', serif;
+  }
+}
+@include breakpoint($tablet) {
+  .menu {
+
+  }
+  .mobile-menu-toggle, .mobile-menu-dark-back {
+    @include do-not-show;
+  }
+  .menu-list {
+    position: relative;
+    margin: -.5rem;
+    padding: 1.5rem .5rem 1rem;
+    list-style-type: none;
+    width: auto;
+    height: auto;
+    left: 0;
+    background: transparent;
+    opacity: 1;
+    transition: {
+      property: background;
+      duration: .2s;
+      timing-function: $cubic;
+    }
+    &:hover {
+      background: rgba($black, .5);
+    }
+  }
+  .menu-item {
+    display: inline-block;
+    padding: .125em .25em;
+    margin-right: .25em;
+    cursor: pointer;
+    vertical-align: top;
+    &:hover {
+      color: $white;
+      .step-number {
+        color: rgba($white, .5);
+      }
+      .step-type {
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+}

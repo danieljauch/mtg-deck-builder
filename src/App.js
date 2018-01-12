@@ -7,8 +7,7 @@ import './style.css';
 // Font utilities:
 
 // JavaScript libraries and files:
-import Event from './js/Event.js';
-import Modals from './js/Modal.js';
+import MoreInfoModal from './js/modals/MoreInfoModal.js';
 import SiteHeader from './js/SiteHeader.js';
 import SiteFooter from './js/SiteFooter.js';
 import Step from './js/Step.js';
@@ -24,6 +23,14 @@ export default class App extends Component {
     error: false,
     currentStep: 1
   }
+	goToStep = stepNumber => {
+		console.log('Going to step', stepNumber);
+		return true;
+	}
+	toggleMobileMenu = _ => {
+		console.log('Toggling mobile menu');
+		return true;
+	}
   reportStateChange = _ => {
     console.log(this.state);
   }
@@ -31,7 +38,9 @@ export default class App extends Component {
   render () {
     return (
       <div className="App">
-        <Modals />
+        <section className="modals">
+          <MoreInfoModal idName="moreInfoModal" modalTitle="More Info" modalContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium excepturi molestiae fugit quibusdam numquam perspiciatis eveniet voluptatum iste debitis ut officiis dolores quisquam, quis incidunt porro! Atque reprehenderit possimus architecto."/>
+        </section>
         <SiteHeader siteTitle="MTG Deck Constructor" logoURL="" />
         <main>
           <Step stepNumber="1" stepName="Format" subHeaderText="" stepContent="Choose a format below. Hover for more information." />

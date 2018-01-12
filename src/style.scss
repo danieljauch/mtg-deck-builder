@@ -1,27 +1,24 @@
-.App {
-  text-align: center;
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-.App-title {
-  font-size: 1.5em;
-}
-.App-intro {
-  font-size: large;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@import './scss-partials/presets/typeface';
+@import './scss-partials/presets/vars';
+@import './scss-partials/presets/mixins';
+@import './scss-partials/presets/keyframes';
+
+@import './scss-partials/global/a';
+@import './scss-partials/global/body';
+@import './scss-partials/global/button';
+@import './scss-partials/global/divp';
+@import './scss-partials/global/figure';
+@import './scss-partials/global/h';
+@import './scss-partials/global/hr';
+@import './scss-partials/global/img';
+@import './scss-partials/global/input';
+@import './scss-partials/global/scroll';
+@import './scss-partials/global/select';
+
+@import './scss-partials/layout/header';
+@import './scss-partials/layout/main';
+@import './scss-partials/layout/footer';
+
+@import './scss-partials/object/menu';
+@import './scss-partials/object/step';
+@import './scss-partials/object/modal';
