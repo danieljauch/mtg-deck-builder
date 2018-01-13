@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StepChoice from './step/StepChoice.js';
 
 export default class Step extends Component {
   render () {
@@ -13,7 +14,7 @@ export default class Step extends Component {
 					<h2>Step #{stepNumber}: {stepName}</h2>
 					<div className="sub-header">{subHeaderText}</div>
 				</header>
-				<div className="step-content-wrap">{stepContent}</div>
+				<StepChoice />
 			</section>
 		);
 	}

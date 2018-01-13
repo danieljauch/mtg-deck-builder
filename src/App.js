@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import './App.scss';
 
 // Font utilities:
-// https://fonts.googleapis.com/css?family=Merriweather:300,400,700
 // https://andrewgioia.github.io/Keyrune/icons.html
 // https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css
 // https://use.fontawesome.com/bf7c42290d.js
@@ -20,19 +19,31 @@ import Step from './js/Step.js';
 export default class App extends Component {
   state = {
     error: false,
-    currentStep: 1
+    mobileMenuVisible: false,
+    mobileMenuOpen: false,
+    currentStep: 1,
+    chosenFormat: '',
+    chosenDeckArchetype: '',
+    chosenLands: [],
+    chosenCreatures: [],
+    chosenSpells: [],
+    allChosenCards: []
   }
 	goToStep = stepNumber => {
-		console.log('Going to step', stepNumber);
-		return true;
+    console.log('Going to step', stepNumber);
+
+    this.setState({
+      currentStep: stepNumber
+    });
+    console.log(this.state);
 	}
 	toggleMobileMenu = _ => {
 		console.log('Toggling mobile menu');
-		return true;
+
+    this.setState({
+      mobileMenuOpen: !this.state.mobileMenuOpen
+    });
 	}
-  reportStateChange = _ => {
-    console.log(this.state);
-  }
 
   render () {
     return (
