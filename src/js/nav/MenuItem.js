@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from '../../App.js';
+// import App from '../../App.js';
 
 export default class MenuItem extends Component {
 	render () {
@@ -11,7 +11,7 @@ export default class MenuItem extends Component {
 			<li className="menu-item">
 				<span className="step-number">#{stepNumber}: </span>
 				<span className="step-type">{stepName}</span>
-				<div className="chosen-info"></div>
+				<div className="chosen-info">{chosenInfo}</div>
 			</li>
 		);
 	}

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // Stylesheets:
-import './style.css';
+import './App.scss';
 
 // Font utilities:
 // https://fonts.googleapis.com/css?family=Merriweather:300,400,700

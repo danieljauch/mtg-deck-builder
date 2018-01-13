@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from '../Modal.js';
 
 export default class MoreInfoModal extends Modal {
@@ -13,10 +13,10 @@ export default class MoreInfoModal extends Modal {
 	render () {
 		return (
 			<article className="modal" id={this.idName}>
-				<header class="modal-header">
+				<header className="modal-header">
 					<h2>{this.modalTitle}</h2>
 				</header>
-				<div class="modal-content">{this.modalContent}</div>
+				<div className="modal-content">{this.modalContent}</div>
 			</article>
 		);
 	}

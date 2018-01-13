@@ -8,7 +8,7 @@ body {
   letter-spacing: .5px;
   background: {
     color: darken($white, 10%);
-    image: url('../img/etched-champion-edit.jpg');
+    image: url('./img/etched-champion-edit.jpg');
     size: cover;
     repeat: no-repeat;
     position: right top;

@@ -6,10 +6,10 @@ export default class SiteFooter extends Component {
 			versionNumber } = this.props;
 		
 		return (
-			<footer class="site-footer">
-				<div class="copywrite">&copy; 2017</div>
-				<div class="credit">Made by <a href={creditLink}>Daniel Jauch</a></div>
-				<div class="version-info">{versionNumber}</div>
+			<footer className="site-footer">
+				<div className="copywrite">&copy; 2017</div>
+				<div className="credit">Made by <a href={creditLink}>Daniel Jauch</a></div>
+				<div className="version-info">{versionNumber}</div>
 			</footer>
 		);
 	}

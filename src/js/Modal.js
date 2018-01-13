@@ -12,10 +12,10 @@ export default class Modal extends Component {
 	render () {
 		return (
 			<article className="modal" id={this.idName}>
-				<header class="modal-header">
+				<header className="modal-header">
 					<h2>{this.modalTitle}</h2>
 				</header>
-				<div class="modal-content">{this.modalContent}</div>
+				<div className="modal-content">{this.modalContent}</div>
 			</article>
 		);
 	}
