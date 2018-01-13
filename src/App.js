@@ -5,17 +5,16 @@ import React, { Component } from 'react';
 import './style.css';
 
 // Font utilities:
+// https://fonts.googleapis.com/css?family=Merriweather:300,400,700
+// https://andrewgioia.github.io/Keyrune/icons.html
+// https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css
+// https://use.fontawesome.com/bf7c42290d.js
 
 // JavaScript libraries and files:
 import MoreInfoModal from './js/modals/MoreInfoModal.js';
 import SiteHeader from './js/SiteHeader.js';
 import SiteFooter from './js/SiteFooter.js';
 import Step from './js/Step.js';
-
-// https://fonts.googleapis.com/css?family=Merriweather:300,400,700
-// https://andrewgioia.github.io/Keyrune/icons.html
-// https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css
-// https://use.fontawesome.com/bf7c42290d.js
 
 
 export default class App extends Component {
