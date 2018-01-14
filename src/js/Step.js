@@ -8,16 +8,27 @@ export default class Step extends Component {
 			subHeaderText,
 			stepContent,
 			visible } = this.props;
-		let classes = visible ? 'step active' : 'step';
 
 		return (
-			<section className={classes}>
+			<section className={visible ? "step active" : "step"}>
 				<header className="step-header">
 					<h2>Step #{stepNumber}: {stepName}</h2>
 					<div className="sub-header">{subHeaderText}</div>
 				</header>
-				<StepChoice />
+				{/* <StepChoiceList choices={StepChoice} /> */}
 			</section>
 		);
 	}
 }
+
+// class StepChoiceList extends Component {
+// 	listChoices = choices.map(choices => {
+// 		<StepChoice />
+// 	});
+
+//   render () {
+// 		return (
+// 			{listChoices}
+// 		);
+// 	}
+// }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-// import App from '../../App.js';
 
 export default class MenuItem extends Component {
 	render () {
 		let { stepNumber,
 			stepName,
-			chosenInfo } = this.props;
+			chosenInfo,
+			handleClick } = this.props;
 
 		return (
-			<li className="menu-item">
+			<li className="menu-item" onClick={handleClick}>
 				<span className="step-number">#{stepNumber}: </span>
 				<span className="step-type">{stepName}</span>
 				<div className="chosen-info">{chosenInfo}</div>
@@ -16,5 +16,3 @@ export default class MenuItem extends Component {
 		);
 	}
 }
-
-// onClick={App.goToStep(stepNumber)}

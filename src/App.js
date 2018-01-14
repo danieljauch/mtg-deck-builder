@@ -18,17 +18,24 @@ import StepChoice from './js/step/StepChoice.js';
 
 
 export default class App extends Component {
-  state = {
-    error: false,
-    mobileMenuVisible: false,
-    mobileMenuOpen: false,
-    currentStep: 1,
-    chosenFormat: '',
-    chosenDeckArchetype: '',
-    chosenLands: [],
-    chosenCreatures: [],
-    chosenSpells: [],
-    allChosenCards: []
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      error: false,
+      mobileMenuVisible: false,
+      mobileMenuOpen: false,
+      currentStep: 1,
+      chosenFormat: '',
+      chosenDeckArchetype: '',
+      chosenLands: [],
+      chosenCreatures: [],
+      chosenSpells: [],
+      allChosenCards: []
+    }
+    this.goToStep = this.goToStep.bind(this);
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 	goToStep = stepNumber => {
     console.log('Going to step', stepNumber);
@@ -44,7 +51,12 @@ export default class App extends Component {
     this.setState({
       mobileMenuOpen: !this.state.mobileMenuOpen
     });
-	}
+    console.log(this.state);
+  }
+  handleClick = _ => {
+		console.log('Handling click');
+    console.log(this);
+  }
 
   render () {
     return (
