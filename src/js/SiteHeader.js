@@ -1,4 +1,7 @@
+// Core Components:
 import React, { Component } from 'react';
+
+// JavaScript libraries and files:
 import NavMenu from './nav/NavMenu.js';
 
 export default class SiteHeader extends Component {

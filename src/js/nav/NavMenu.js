@@ -1,4 +1,8 @@
+// Core Components:
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+
+// JavaScript libraries and files:
 import MenuItem from './MenuItem.js';
 import App from '../../App.js';
 
@@ -35,7 +39,7 @@ class MenuList extends Component {
 const NavMenu = _ => (
 	<nav className="menu">
 		<div className="mobile-menu-toggle" onClick={App.toggleMobileMenu}>
-			<i className="fa fa-list" aria-hidden="true"></i>
+			<FontAwesome name="list" />
 		</div>
 		<div className="mobile-menu-dark-back"></div>
 		<MenuList list={menuListItems} handleClick={this.handleClick} />

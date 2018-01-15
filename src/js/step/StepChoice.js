@@ -1,3 +1,4 @@
+// Core Components:
 import React, { Component } from 'react';
 
 export default class StepChoice extends Component {

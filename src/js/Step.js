@@ -1,4 +1,7 @@
+// Core Components:
 import React, { Component } from 'react';
+
+// JavaScript libraries and files:
 import StepChoice from './step/StepChoice.js';
 
 export default class Step extends Component {
