@@ -7,7 +7,8 @@ import NavMenu from './nav/NavMenu.js';
 export default class SiteHeader extends Component {
 	render () {
 		let { siteTitle,
-			logoURL } = this.props;
+			logoURL,
+			handleClick } = this.props;
 		
 		return (
 			<header className="site-header">

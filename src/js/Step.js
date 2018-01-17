@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // JavaScript libraries and files:
-import StepChoice from './step/StepChoice.js';
+// import StepChoice from './step/StepChoice.js';
 
 export default class Step extends Component {
   render () {
@@ -18,6 +18,7 @@ export default class Step extends Component {
 					<h2>Step #{stepNumber}: {stepName}</h2>
 					<div className="sub-header">{subHeaderText}</div>
 				</header>
+				{stepContent}
 				{/* <StepChoiceList choices={StepChoice} /> */}
 			</section>
 		);

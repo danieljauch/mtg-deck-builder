@@ -10,8 +10,10 @@ export default class MenuItem extends Component {
 
 		return (
 			<li className="menu-item" onClick={handleClick}>
-				<span className="step-number">#{stepNumber}: </span>
-				<span className="step-type">{stepName}</span>
+				<div>
+					<span className="step-number">#{stepNumber}: </span>
+					<span className="step-type">{stepName}</span>
+				</div>
 				<div className="chosen-info">{chosenInfo}</div>
 			</li>
 		);

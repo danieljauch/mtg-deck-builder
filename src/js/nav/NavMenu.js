@@ -27,7 +27,7 @@ class MenuList extends Component {
 							<MenuItem stepNumber={item.stepNumber}
 								stepName={item.stepName}
 								chosenInfo={item.chosenInfo}
-								handleClick={handleClick} />
+								onClick={handleClick} />
 						);
 					}
 				)}
