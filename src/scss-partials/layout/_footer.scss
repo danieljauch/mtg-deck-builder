@@ -8,19 +8,19 @@
   display: inline-flex;
   justify-content: space-between;
   color: rgba(lighten($black, 25%), .5);
-  transition: {
-    property: color, background, text-shadow;
-    duration: .5s;
-    timing-function: $cubic;
-  }
-  &:hover {
-    background: rgba($black, .1);
-    color: rgba(darken($white, 10%), .9);
-    text-shadow: 1px .125rem .5rem rgba($black, .5);
-    a {
-      color: rgba(darken($blue, 15%), .9);
-    }
-  }
+  // transition: {
+  //   property: color, background, text-shadow;
+  //   duration: .5s;
+  //   timing-function: $cubic;
+  // }
+  // &:hover {
+  //   background: rgba($black, .1);
+  //   color: rgba(darken($white, 10%), .9);
+  //   text-shadow: 1px .125rem .5rem rgba($black, .5);
+  //   a {
+  //     color: rgba(darken($blue, 15%), .9);
+  //   }
+  // }
   a {
     color: rgba(lighten($black, 5%), .5);
   }

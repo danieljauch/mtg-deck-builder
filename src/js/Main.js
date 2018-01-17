@@ -2,7 +2,48 @@
 import React, { Component } from 'react';
 
 // JavaScript libraries and files:
-// import StepChoice from './step/StepChoice.js';
+import App from '../App.js';
+
+export default class Main extends Component {
+  render () {
+		let { currentStep } = this.props;
+
+		return (
+			<main className="app-main">
+				<Step stepNumber={1}
+					stepName="Format"
+					subHeaderText="Choose a format below. Hover for more information."
+					stepContent=""
+					visible={currentStep === 1 ? true : false} />
+				<Step stepNumber={2}
+					stepName="Deck Type"
+					subHeaderText="Choose a deck archetype. Hover for more information."
+					stepContent=""
+					visible={currentStep === 2 ? true : false} />
+				<Step stepNumber={3}
+					stepName="Lands"
+					subHeaderText=""
+					stepContent=""
+					visible={currentStep === 3 ? true : false} />
+				<Step stepNumber={4}
+					stepName="Creatures"
+					subHeaderText=""
+					stepContent=""
+					visible={currentStep === 4 ? true : false} />
+				<Step stepNumber={5}
+					stepName="Spells"
+					subHeaderText=""
+					stepContent=""
+					visible={currentStep === 5 ? true : false} />
+				<Step stepNumber={6}
+					stepName="Print"
+					subHeaderText=""
+					stepContent=""
+					visible={currentStep === 6 ? true : false} />
+			</main>
+		)
+	}
+}
 
 class Step extends Component {
   render () {
@@ -59,37 +100,3 @@ class StepChoice extends Component {
 		);
 	}
 }
-
-
-{/* <main>
-	<Step stepNumber={1}
-		stepName="Format"
-		subHeaderText="Choose a format below. Hover for more information."
-		stepContent=""
-		visible={this.state.currentStep === 1 ? true : false} />
-	<Step stepNumber={2}
-		stepName="Deck Type"
-		subHeaderText="Choose a deck archetype. Hover for more information."
-		stepContent=""
-		visible={this.state.currentStep === 2 ? true : false} />
-	<Step stepNumber={3}
-		stepName="Lands"
-		subHeaderText=""
-		stepContent=""
-		visible={this.state.currentStep === 3 ? true : false} />
-	<Step stepNumber={4}
-		stepName="Creatures"
-		subHeaderText=""
-		stepContent=""
-		visible={this.state.currentStep === 4 ? true : false} />
-	<Step stepNumber={5}
-		stepName="Spells"
-		subHeaderText=""
-		stepContent=""
-		visible={this.state.currentStep === 5 ? true : false} />
-	<Step stepNumber={6}
-		stepName="Print"
-		subHeaderText=""
-		stepContent=""
-		visible={this.state.currentStep === 6 ? true : false} />
-</main> */}

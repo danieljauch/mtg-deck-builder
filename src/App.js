@@ -98,8 +98,8 @@ export default class App extends Component {
     return (
       <div className="app">
         <Modals />
-        <Aside />
-        <Main />
+        <Aside goToStep={this.goToStep} toggleMobileMenu={this.toggleMobileMenu} />
+        <Main currentStep={this.state.currentStep} />
       </div>
     );
   }
