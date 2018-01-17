@@ -11,11 +11,9 @@ import './App.scss';
 // https://use.fontawesome.com/bf7c42290d.js
 
 // JavaScript libraries and files:
-import MoreInfoModal from './js/modals/MoreInfoModal.js';
-import MenuItem from './js/nav/MenuItem.js';
-import SiteFooter from './js/SiteFooter.js';
-import Step from './js/Step.js';
-// import StepChoice from './js/step/StepChoice.js';
+import Modals from './js/Modals.js';
+import Aside from './js/Aside.js';
+import Main from './js/Main.js';
 
 
 export default class App extends Component {
@@ -43,7 +41,50 @@ export default class App extends Component {
       currentStep: stepNumber
     });
     console.log(this.state);
-	}
+  }
+  makeChoice = choice => {
+    switch (this.state.currentStep) {
+      case 2:
+        console.log("Choice made on step 2");
+        this.setState({
+          currentStep: 3,
+          chosenDeckArchetype: choice
+        });
+        break;
+        
+      case 3:
+        console.log("Choice made on step 3");
+        this.setState({
+          currentStep: 4,
+          chosenLands: choice
+        });
+        break;
+      
+      case 4:
+        console.log("Choice made on step 4");
+        this.setState({
+          currentStep: 5,
+          chosenCreatures: choice
+        });
+        break;
+        
+      case 5:
+        console.log("Choice made on step 5");
+        this.setState({
+          currentStep: 6,
+          chosenSpells: choice
+        });
+        break;
+
+      default: // 1
+        this.setState({
+          currentStep: 2,
+          chosenFormat: choice
+        });
+        console.log("Choice made on step 1");
+    }
+    console.log(this.state);
+  }
 	toggleMobileMenu = _ => {
 		console.log('Toggling mobile menu');
 
@@ -55,81 +96,10 @@ export default class App extends Component {
 
   render () {
     return (
-      <div className="App">
-        <section className="modals">
-          <MoreInfoModal idName="moreInfoModal" 
-            modalTitle="More Info" 
-            modalContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium excepturi molestiae fugit quibusdam numquam perspiciatis eveniet voluptatum iste debitis ut officiis dolores quisquam, quis incidunt porro! Atque reprehenderit possimus architecto."/>
-        </section>
-        <header className="site-header">
-          <h1 className="header-title">MTG Deck Constructor</h1>
-          <nav className="menu">
-            <div className="mobile-menu-toggle" onClick={App.toggleMobileMenu}>
-              <FontAwesome name="list" />
-            </div>
-            <div className="mobile-menu-dark-back"></div>
-            <ul className="menu-list">
-              <MenuItem stepNumber={1}
-                stepName="Format"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(1)} />
-              <MenuItem stepNumber={2}
-                stepName="Deck Type"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(2)} />
-              <MenuItem stepNumber={3}
-                stepName="Lands"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(3)} />
-              <MenuItem stepNumber={4}
-                stepName="Creatures"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(4)} />
-              <MenuItem stepNumber={5}
-                stepName="Spells"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(5)} />
-              <MenuItem stepNumber={6}
-                stepName="Print / Export"
-                chosenInfo=""
-                handleClick={_ => this.goToStep(6)} />
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <Step stepNumber={1}
-            stepName="Format"
-            subHeaderText="Choose a format below. Hover for more information."
-            stepContent=""
-            visible={this.state.currentStep === 1 ? true : false} />
-          <Step stepNumber={2}
-            stepName="Deck Type"
-            subHeaderText="Choose a deck archetype. Hover for more information."
-            stepContent=""
-            visible={this.state.currentStep === 2 ? true : false} />
-          <Step stepNumber={3}
-            stepName="Lands"
-            subHeaderText=""
-            stepContent=""
-            visible={this.state.currentStep === 3 ? true : false} />
-          <Step stepNumber={4}
-            stepName="Creatures"
-            subHeaderText=""
-            stepContent=""
-            visible={this.state.currentStep === 4 ? true : false} />
-          <Step stepNumber={5}
-            stepName="Spells"
-            subHeaderText=""
-            stepContent=""
-            visible={this.state.currentStep === 5 ? true : false} />
-          <Step stepNumber={6}
-            stepName="Print"
-            subHeaderText=""
-            stepContent=""
-            visible={this.state.currentStep === 6 ? true : false} />
-        </main>
-        <SiteFooter creditLink="https://danieljauch.bitbucket.io/"
-          versionNumber="v0.2.0" />
+      <div className="app">
+        <Modals />
+        <Aside />
+        <Main />
       </div>
     );
   }
