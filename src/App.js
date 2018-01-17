@@ -62,18 +62,55 @@ export default class App extends Component {
     return (
       <div className="App">
         <section className="modals">
-          <MoreInfoModal idName="moreInfoModal" modalTitle="More Info" modalContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium excepturi molestiae fugit quibusdam numquam perspiciatis eveniet voluptatum iste debitis ut officiis dolores quisquam, quis incidunt porro! Atque reprehenderit possimus architecto."/>
+          <MoreInfoModal 
+            idName="moreInfoModal" 
+            modalTitle="More Info" 
+            modalContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium excepturi molestiae fugit quibusdam numquam perspiciatis eveniet voluptatum iste debitis ut officiis dolores quisquam, quis incidunt porro! Atque reprehenderit possimus architecto."/>
         </section>
-        <SiteHeader siteTitle="MTG Deck Constructor" logoURL="" />
+        <SiteHeader
+          siteTitle="MTG Deck Constructor"
+          logoURL="" />
         <main>
-          <Step stepNumber="1" stepName="Format" subHeaderText="" stepContent="Choose a format below. Hover for more information." visible={true} />
-          <Step stepNumber="2" stepName="Deck Type" subHeaderText="Choose a deck archetype. Hover for more information." stepContent="" visible={false} />
-          <Step stepNumber="3" stepName="Lands" subHeaderText="" stepContent="" visible={false} />
-          <Step stepNumber="4" stepName="Creatures" subHeaderText="" stepContent="" visible={false} />
-          <Step stepNumber="5" stepName="Spells" subHeaderText="" stepContent="" visible={false} />
-          <Step stepNumber="6" stepName="Print" subHeaderText="" stepContent="" visible={false} />
+          <Step
+            stepNumber={1}
+            stepName="Format"
+            subHeaderText=""
+            stepContent="Choose a format below. Hover for more information."
+            visible={this.state.currentStep == 1 ? true : false} />
+          <Step
+            stepNumber={2}
+            stepName="Deck Type"
+            subHeaderText="Choose a deck archetype. Hover for more information."
+            stepContent=""
+            visible={this.state.currentStep == 2 ? true : false} />
+          <Step
+            stepNumber={3}
+            stepName="Lands"
+            subHeaderText=""
+            stepContent=""
+            visible={this.state.currentStep == 3 ? true : false} />
+          <Step
+            stepNumber={4}
+            stepName="Creatures"
+            subHeaderText=""
+            stepContent=""
+            visible={this.state.currentStep == 4 ? true : false} />
+          <Step
+            stepNumber={5}
+            stepName="Spells"
+            subHeaderText=""
+            stepContent=""
+            visible={this.state.currentStep == 5 ? true : false} />
+          <Step
+            stepNumber={6}
+            stepName="Print"
+            subHeaderText=""
+            stepContent=""
+            visible={this.state.currentStep == 6 ? true : false} />
         </main>
-        <SiteFooter creditLink="https://danieljauch.bitbucket.io/" versionNumber="v0.2.0" />
+        <SiteFooter
+          creditLink="https://danieljauch.bitbucket.io/"
+          versionNumber="v0.2.0" />
       </div>
     );
   }
