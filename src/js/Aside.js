@@ -9,11 +9,11 @@ export default class Aside extends Component {
 	render () {
 		let { toggleMobileMenu,
 			goToStep } = this.props;
-		
+
 		return (
 			<aside className="app-aside">
 				<header className="site-header">
-					<h1 className="header-title">MTG Deck Constructor</h1>
+					<h1 className="header-title">MTG Deck Builder</h1>
 					<nav className="menu">
 						<div className="mobile-menu-toggle" onClick={_ => this.toggleMobileMenu}>
 							<FontAwesome name="list" />
@@ -22,23 +22,23 @@ export default class Aside extends Component {
 						<ul className="menu-list">
 							<MenuItem stepNumber={1}
 								stepName="Format"
-								chosenInfo=""
+								chosenInfo="Standard"
 								handleClick={_ => this.goToStep(1)} />
 							<MenuItem stepNumber={2}
 								stepName="Deck Type"
-								chosenInfo=""
+								chosenInfo="Dinosaurs"
 								handleClick={_ => this.goToStep(2)} />
 							<MenuItem stepNumber={3}
 								stepName="Lands"
-								chosenInfo=""
+								chosenInfo="23 chosen"
 								handleClick={_ => this.goToStep(3)} />
 							<MenuItem stepNumber={4}
 								stepName="Creatures"
-								chosenInfo=""
+								chosenInfo="16 chosen"
 								handleClick={_ => this.goToStep(4)} />
 							<MenuItem stepNumber={5}
 								stepName="Spells"
-								chosenInfo=""
+								chosenInfo="21 chosen"
 								handleClick={_ => this.goToStep(5)} />
 							<MenuItem stepNumber={6}
 								stepName="Print / Export"
@@ -47,8 +47,11 @@ export default class Aside extends Component {
 						</ul>
 					</nav>
 				</header>
+				<div className="aside-colapse-button">
+					<FontAwesome name="arrow-left" />
+				</div>
 				<SiteFooter creditLink="https://danieljauch.bitbucket.io/"
-				versionNumber="v0.2.0" />
+					versionNumber="v0.3.0" />
 			</aside>
 		)
 	}
@@ -59,7 +62,7 @@ class SiteHeader extends Component {
 		let { siteTitle,
 			logoURL,
 			handleClick } = this.props;
-		
+
 		return (
 			<header className="site-header">
 				<h1 className="header-title">{siteTitle}</h1>
@@ -83,7 +86,7 @@ class MenuList extends Component {
 	render () {
 		let { list,
 			handleClick } = this.props;
-	
+
 		return (
 			<ul className="menu-list">
 				{list.map(item => {
@@ -133,12 +136,14 @@ class SiteFooter extends Component {
 	render () {
 		let { creditLink,
 			versionNumber } = this.props;
-		
+
 		return (
 			<footer className="site-footer">
-				<div className="copywrite">&copy; 2017</div>
 				<div className="credit">Made by <a href={creditLink}>Daniel Jauch</a></div>
-				<div className="version-info">{versionNumber}</div>
+				<div>
+					<span className="copywrite">&copy; 2018</span>
+					<span className="version-info">{versionNumber}</span>
+				</div>
 			</footer>
 		);
 	}

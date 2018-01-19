@@ -15,6 +15,7 @@ import Modals from './js/Modals.js';
 import Aside from './js/Aside.js';
 import Main from './js/Main.js';
 
+const appVersion = 'v0.3.0';
 
 export default class App extends Component {
   constructor (props) {
@@ -51,7 +52,7 @@ export default class App extends Component {
           chosenDeckArchetype: choice
         });
         break;
-        
+
       case 3:
         console.log("Choice made on step 3");
         this.setState({
@@ -59,7 +60,7 @@ export default class App extends Component {
           chosenLands: choice
         });
         break;
-      
+
       case 4:
         console.log("Choice made on step 4");
         this.setState({
@@ -67,7 +68,7 @@ export default class App extends Component {
           chosenCreatures: choice
         });
         break;
-        
+
       case 5:
         console.log("Choice made on step 5");
         this.setState({
@@ -98,7 +99,8 @@ export default class App extends Component {
     return (
       <div className="app">
         <Modals />
-        <Aside goToStep={this.goToStep} toggleMobileMenu={this.toggleMobileMenu} />
+        <Aside goToStep={this.goToStep}
+          toggleMobileMenu={this.toggleMobileMenu} />
         <Main currentStep={this.state.currentStep} />
       </div>
     );
