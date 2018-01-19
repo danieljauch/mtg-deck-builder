@@ -1,6 +1,7 @@
 // Core Components:
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import { version } from '../package.json';
 
 // Stylesheets:
 import './App.scss';
@@ -100,7 +101,8 @@ export default class App extends Component {
       <div className="app">
         <Modals />
         <Aside goToStep={this.goToStep}
-          toggleMobileMenu={this.toggleMobileMenu} />
+          toggleMobileMenu={this.toggleMobileMenu}
+          version={version} />
         <Main currentStep={this.state.currentStep} />
       </div>
     );

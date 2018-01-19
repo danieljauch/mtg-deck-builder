@@ -8,7 +8,8 @@ import App from '../App.js';
 export default class Aside extends Component {
 	render () {
 		let { toggleMobileMenu,
-			goToStep } = this.props;
+			goToStep,
+		 	version } = this.props;
 
 		return (
 			<aside className="app-aside">
@@ -51,7 +52,7 @@ export default class Aside extends Component {
 					<FontAwesome name="arrow-left" />
 				</div>
 				<SiteFooter creditLink="https://danieljauch.bitbucket.io/"
-					versionNumber="v0.3.0" />
+					versionNumber={`v. ${version}`} />
 			</aside>
 		)
 	}
