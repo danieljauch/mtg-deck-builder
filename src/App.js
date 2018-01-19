@@ -100,9 +100,13 @@ export default class App extends Component {
     return (
       <div className="app">
         <Modals />
-        <Aside goToStep={this.goToStep}
+
+        <Aside siteTitle="MTG Deck Builder"
+          logoURL=""
+          goToStep={this.goToStep}
           toggleMobileMenu={this.toggleMobileMenu}
           version={version} />
+        
         <Main currentStep={this.state.currentStep} />
       </div>
     );

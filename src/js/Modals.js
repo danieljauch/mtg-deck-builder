@@ -14,8 +14,8 @@ export default class Modals extends Component {
 	render () {
 		return (
 			<section className="modals">
-				<div classname="modal-back"></div>
-				<div classname="modal-close">
+				<div className="modal-back"></div>
+				<div className="modal-close">
 					<FontAwesome name="times" />
 				</div>
 				{/* Modals here */}

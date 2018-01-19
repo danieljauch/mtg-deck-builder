@@ -7,47 +7,18 @@ import App from '../App.js';
 
 export default class Aside extends Component {
 	render () {
-		let { toggleMobileMenu,
+		let { siteTitle,
+			logoURL,
+			toggleMobileMenu,
 			goToStep,
 		 	version } = this.props;
 
 		return (
 			<aside className="app-aside">
-				<header className="site-header">
-					<h1 className="header-title">MTG Deck Builder</h1>
-					<nav className="menu">
-						<div className="mobile-menu-toggle" onClick={_ => this.toggleMobileMenu}>
-							<FontAwesome name="list" />
-						</div>
-						<div className="mobile-menu-dark-back"></div>
-						<ul className="menu-list">
-							<MenuItem stepNumber={1}
-								stepName="Format"
-								chosenInfo="Standard"
-								handleClick={_ => this.goToStep(1)} />
-							<MenuItem stepNumber={2}
-								stepName="Deck Type"
-								chosenInfo="Dinosaurs"
-								handleClick={_ => this.goToStep(2)} />
-							<MenuItem stepNumber={3}
-								stepName="Lands"
-								chosenInfo="23 chosen"
-								handleClick={_ => this.goToStep(3)} />
-							<MenuItem stepNumber={4}
-								stepName="Creatures"
-								chosenInfo="16 chosen"
-								handleClick={_ => this.goToStep(4)} />
-							<MenuItem stepNumber={5}
-								stepName="Spells"
-								chosenInfo="21 chosen"
-								handleClick={_ => this.goToStep(5)} />
-							<MenuItem stepNumber={6}
-								stepName="Print / Export"
-								chosenInfo=""
-								handleClick={_ => this.goToStep(6)} />
-						</ul>
-					</nav>
-				</header>
+				<AppHeader siteTitle={siteTitle}
+					logoURL={logoURL}
+					toggleMobileMenu={toggleMobileMenu}
+					goToStep={goToStep} />
 				<div className="aside-colapse-button">
 					<FontAwesome name="arrow-left" />
 				</div>
@@ -58,17 +29,19 @@ export default class Aside extends Component {
 	}
 }
 
-class SiteHeader extends Component {
+class AppHeader extends Component {
 	render () {
 		let { siteTitle,
 			logoURL,
-			handleClick } = this.props;
+			toggleMobileMenu,
+			goToStep } = this.props;
 
 		return (
-			<header className="site-header">
+			<header className="app-header">
 				<h1 className="header-title">{siteTitle}</h1>
 				<img src={logoURL} alt={siteTitle} className="logo" />
-				<NavMenu />
+				<NavMenu toggleMobileMenu={toggleMobileMenu}
+					goToStep={goToStep} />
 			</header>
 		);
 	}
@@ -103,16 +76,55 @@ class MenuList extends Component {
 		)
 	}
 }
+class NavMenu extends Component {
+	render () {
+		let { toggleMobileMenu,
+			goToStep } = this.props;
 
-const NavMenu = _ => (
-	<nav className="menu">
-		<div className="mobile-menu-toggle" onClick={App.toggleMobileMenu}>
-			<FontAwesome name="list" />
-		</div>
-		<div className="mobile-menu-dark-back"></div>
-		<MenuList list={menuListItems} handleClick={this.handleClick} />
-	</nav>
-);
+		return (
+			<nav className="menu">
+				<div className="mobile-menu-toggle" onClick={_ => toggleMobileMenu}>
+					<FontAwesome name="list" />
+				</div>
+				<div className="mobile-menu-dark-back"></div>
+				<ul className="menu-list">
+					<MenuItem stepNumber={1}
+						stepName="Format"
+						chosenInfo="Standard"
+						handleClick={_ => goToStep(1)} />
+					<MenuItem stepNumber={2}
+						stepName="Deck Type"
+						chosenInfo="Dinosaurs"
+						handleClick={_ => goToStep(2)} />
+					<MenuItem stepNumber={3}
+						stepName="Lands"
+						chosenInfo="23 chosen"
+						handleClick={_ => goToStep(3)} />
+					<MenuItem stepNumber={4}
+						stepName="Creatures"
+						chosenInfo="16 chosen"
+						handleClick={_ => goToStep(4)} />
+					<MenuItem stepNumber={5}
+						stepName="Spells"
+						chosenInfo="21 chosen"
+						handleClick={_ => goToStep(5)} />
+					<MenuItem stepNumber={6}
+						stepName="Print / Export"
+						chosenInfo=""
+						handleClick={_ => goToStep(6)} />
+				</ul>
+			</nav>
+
+			// <nav className="menu">
+			// 	<div className="mobile-menu-toggle" onClick={_ => toggleMobileMenu}>
+			// 		<FontAwesome name="list" />
+			// 	</div>
+			// 	<div className="mobile-menu-dark-back"></div>
+			// 	<MenuList list={menuListItems} handleClick={_ => goToStep(6)} />
+			// </nav>
+		);
+	}
+}
 
 class MenuItem extends Component {
 	render () {
