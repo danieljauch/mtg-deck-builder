@@ -8,17 +8,18 @@ export default class AppHeader extends Component {
 	render () {
 		let { siteTitle,
 			logoURL,
-			toggleMobileMenu,
 			goToStep,
-			menuListItems } = this.props;
+			menuListItems,
+			openModal } = this.props;
 
 		return (
 			<header className="app-header">
 				<h1 className="header-title">{siteTitle}</h1>
 				<img src={logoURL} alt={siteTitle} className="logo" />
-				<NavMenu toggleMobileMenu={toggleMobileMenu}
-					goToStep={goToStep}
-					menuListItems={menuListItems} />
+				
+				<NavMenu goToStep={goToStep}
+					menuListItems={menuListItems}
+					openModal={openModal} />
 			</header>
 		);
 	}

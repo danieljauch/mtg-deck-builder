@@ -17,11 +17,12 @@ export default class Modals extends Component {
 				<div className="modal-close" onClick={closeModals}>
 					<FontAwesome name="times" />
 				</div>
+				
 				{modalListInfo.map(item => {
 						return (
 							<Modal modalTitle={item.modalTitle}
 								modalContent={item.modalContent}
-								isOpen={openModal == item.modalTitle} />
+								isOpen={openModal === item.modalTitle} />
 						);
 					}
 				)}

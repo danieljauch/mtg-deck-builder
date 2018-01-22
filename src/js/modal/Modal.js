@@ -12,6 +12,7 @@ export default class Modal extends Component {
 				<header className="modal-header">
 					<h2>{modalTitle}</h2>
 				</header>
+				
 				<div className="modal-content">{modalContent}</div>
 			</article>
 		);

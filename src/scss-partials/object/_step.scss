@@ -24,7 +24,7 @@
 .step-header {
   padding: 1rem;
   margin: -1rem -1rem 1rem;
-  background: $green;
+  background: linear-gradient(to right, $blue, $green);
   box-shadow: 0 .25rem 2rem rgba($black, .25);
   h2 {
     text-align: right;

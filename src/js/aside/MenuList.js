@@ -7,7 +7,8 @@ import MenuItem from './MenuItem.js';
 export default class MenuList extends Component {
 	render () {
 		let { menuListItems,
-			goToStep } = this.props;
+			goToStep,
+			openModal } = this.props;
 
 		return (
 			<ul className="menu-list">
@@ -16,7 +17,8 @@ export default class MenuList extends Component {
 							<MenuItem stepNumber={item.stepNumber}
 								stepName={item.stepName}
 								chosenInfo={item.chosenInfo}
-								goToStep={_ => goToStep(item.stepNumber)} />
+								goToStep={_ => goToStep(item.stepNumber)}
+								openModal={openModal} />
 						);
 					}
 				)}
