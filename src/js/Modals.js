@@ -13,9 +13,10 @@ export default class Modals extends Component {
 
 		return (
 			<section className="modals">
-				<div className="modal-back"></div>
-				<div className="modal-close" onClick={closeModals}>
-					<FontAwesome name="times" />
+				<div className="modal-back" onClick={closeModals}>
+					<div className="modal-close">
+						<FontAwesome name="times" />
+					</div>
 				</div>
 				
 				{modalListInfo.map(item => {

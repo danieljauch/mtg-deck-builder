@@ -33,7 +33,8 @@ export default class Aside extends Component {
 
 				<AppFooter creditLink={creditLink}
 					versionNumber={`v. ${version}`}
-					copyrightYear={copyrightYear} />
+					copyrightYear={copyrightYear}
+					openModal={openModal} />
 			</aside>
 		)
 	}

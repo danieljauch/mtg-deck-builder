@@ -1,6 +1,6 @@
 h1, h2, h3, h4, h5, h6 {
   color: darken($white, 10%);
-  text-shadow: 1px .125rem .5rem rgba($black, .5);
+  text-shadow: $taper-shadow;
   font-family: beleren, 'Merriweather', 'Times New Roman', serif;
   margin: 0;
 }

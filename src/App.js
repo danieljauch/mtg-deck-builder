@@ -206,6 +206,39 @@ export default class App extends Component {
         modalContent: (
           <div className="modal-content">
           </div>
+        )},
+
+      // App modals
+      {modalTitle: 'Changelog',
+        modalContent: (
+          <div className="modal-content">
+            <section className="change-version-section">
+              <header className="change-version-number">
+                <h3>v. 0.1.0</h3>
+              </header>
+              <ul className="changes-list">
+                <li className="change-item">Initial design</li>
+                <li className="change-item">Prototype content</li>
+              </ul>
+            </section>
+            <section className="change-version-section">
+              <header className="change-version-number">
+                <h3>v. 0.2.0</h3>
+              </header>
+              <ul className="changes-list">
+                <li className="change-item">Migration to React</li>
+                <li className="change-item">Testing states and component layout</li>
+              </ul>
+            </section>
+            <section className="change-version-section">
+              <header className="change-version-number">
+                <h3>v. 0.3.0</h3>
+              </header>
+              <ul className="changes-list">
+                <li className="change-item">Redesign</li>
+              </ul>
+            </section>
+          </div>
         )}
     ];
 

@@ -9,7 +9,7 @@
   a {
     // color: rgba(lighten($black, 5%), .5);
   }
-  .copywrite {
+  .copyright {
 
   }
   .credit {
@@ -17,5 +17,6 @@
   }
   .version-info {
     float: right;
+    cursor: pointer;
   }
 }
