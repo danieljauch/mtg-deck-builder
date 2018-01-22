@@ -1,12 +1,14 @@
 // Core Components:
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 // JavaScript libraries and files:
 import App from '../App.js';
 
 export default class Main extends Component {
   render () {
-		let { currentStep } = this.props;
+		let { currentStep,
+			openModal } = this.props;
 
 		return (
 			<main className="app-main">
@@ -51,39 +53,29 @@ class Step extends Component {
 			stepName,
 			subHeaderText,
 			stepContent,
-			visible } = this.props;
+			openModal,
+			isVisible } = this.props;
 
 		return (
-			<section className={visible ? "step active" : "step"}>
+			<section className={isVisible ? "step active" : "step"}>
 				<header className="step-header">
 					<h2>Step #{stepNumber}: {stepName}</h2>
 					<div className="sub-header">{subHeaderText}</div>
 				</header>
 				{stepContent}
-				{/* <StepChoiceList choices={StepChoice} /> */}
+				{/* <StepChoiceList choices={StepChoice} openModal={openModal} /> */}
 			</section>
 		);
 	}
 }
-
-// class StepChoiceList extends Component {
-// 	listChoices = choices.map(choices => {
-// 		<StepChoice />
-// 	});
-
-//   render () {
-// 		return (
-// 			{listChoices}
-// 		);
-// 	}
-// }
 
 
 class StepChoice extends Component {
   render () {
 		let { stepChoiceType,
 			stepChoiceName,
-			stepChoiceImage } = this.props;
+			stepChoiceImage,
+			openModal } = this.props;
 
 		return (
 			<div className="step-content-wrap">
@@ -92,7 +84,7 @@ class StepChoice extends Component {
 						<img src={stepChoiceImage} alt={stepChoiceName} className="step-box-image" />
 						<figcaption className="step-box-caption">
 							<h3>{stepChoiceName}</h3>
-							<i className="fa fa-info-circle more-info-icon" aria-hidden="true"></i>
+							<FontAwesome name="info-circle" onClick={_ => openModal(stepChoiceName)}/>
 						</figcaption>
 					</figure>
 				}

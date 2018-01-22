@@ -1,7 +1,7 @@
 // Core Components:
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { version } from '../package.json';
+import { APP_VERSION } from '../package.json';
 
 // Stylesheets:
 import './App.scss';
@@ -16,8 +16,6 @@ import Modals from './js/Modals.js';
 import Aside from './js/Aside.js';
 import Main from './js/Main.js';
 
-const appVersion = 'v0.3.0';
-
 export default class App extends Component {
   constructor (props) {
     super(props);
@@ -26,6 +24,8 @@ export default class App extends Component {
       error: false,
       mobileMenuVisible: false,
       mobileMenuOpen: false,
+      modalOpen: false,
+      currentlyOpenModal: '',
       currentStep: 1,
       chosenFormat: '',
       chosenDeckArchetype: '',
@@ -34,6 +34,22 @@ export default class App extends Component {
       chosenSpells: [],
       allChosenCards: []
     }
+
+    this.menuListItems = [
+      {stepNumber: "1", stepName: "Format", chosenInfo: ""},
+      {stepNumber: "2", stepName: "Deck Type", chosenInfo: ""},
+      {stepNumber: "3", stepName: "Lands", chosenInfo: ""},
+      {stepNumber: "4", stepName: "Creatures", chosenInfo: ""},
+      {stepNumber: "5", stepName: "Spells", chosenInfo: ""},
+      {stepNumber: "6", stepName: "Print / Export", chosenInfo: ""}
+    ];
+
+    this.modalListInfo = [
+      {modalTitle:"", modalContent:(
+        <div className="modal-content">
+        </div>
+      )}
+    ];
   }
 
 	goToStep = stepNumber => {
@@ -95,19 +111,42 @@ export default class App extends Component {
     });
     console.log(this.state);
   }
+	openModal = modalName => {
+		console.log(`Opening modal ${modalName}`);
+
+    this.setState({
+      modalOpen: true,
+      currentlyOpenModal: modalName
+    });
+    console.log(this.state);
+  }
+	closeModals = _ => {
+		console.log('Toggling modal');
+
+    this.setState({
+      modalOpen: false,
+      currentlyOpenModal: ''
+    });
+    console.log(this.state);
+  }
 
   render () {
     return (
       <div className="app">
-        <Modals />
+        <Modals modalListInfo={this.modalListInfo}
+          currentlyOpenModal={this.state.currentlyOpenModal}
+          closeModals={this.closeModals} />
 
         <Aside siteTitle="MTG Deck Builder"
           logoURL=""
           goToStep={this.goToStep}
           toggleMobileMenu={this.toggleMobileMenu}
-          version={version} />
+          openModal={this.openModal}
+          menuListItems={this.menuListItems}
+          version={APP_VERSION} />
         
-        <Main currentStep={this.state.currentStep} />
+        <Main currentStep={this.state.currentStep}
+          openModal={this.openModal} />
       </div>
     );
   }

@@ -2,32 +2,30 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
+// JavaScript libraries and files:
+import Modal from './modal/Modal.js';
+
 export default class Modals extends Component {
-	constructor (props) {
-		super(props);
-
-		this.idName = this.props.idName;
-		this.modalTitle = this.props.modalTitle;
-		this.modalContent = this.props.modalContent;
-	}
-
 	render () {
+		let { modalListInfo,
+			closeModals,
+			openModal } = this.props;
+
 		return (
 			<section className="modals">
 				<div className="modal-back"></div>
-				<div className="modal-close">
+				<div className="modal-close" onClick={closeModals}>
 					<FontAwesome name="times" />
 				</div>
-				{/* Modals here */}
+				{modalListInfo.map(item => {
+						return (
+							<Modal modalTitle={item.modalTitle}
+								modalContent={item.modalContent}
+								isOpen={openModal == item.modalTitle} />
+						);
+					}
+				)}
 			</section>
 		);
 	}
 }
-
-
-{/* <article className="modal" id={this.idName}>
-	<header className="modal-header">
-		<h2>{this.modalTitle}</h2>
-	</header>
-	<div className="modal-content">{this.modalContent}</div>
-</article> */}
