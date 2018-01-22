@@ -3,7 +3,7 @@
 	order: 1;
 	flex-basis: 15%;
 	flex-grow: 1;
-  background: $blue;
+  background: linear-gradient($blue, darken($blue, 10%));
   box-shadow: inset 0 .25rem 2rem rgba($black, .25);
 	padding: .5rem;
 	.toggle-menu-btn {

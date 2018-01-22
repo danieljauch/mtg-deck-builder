@@ -84,6 +84,9 @@
     font-family: beleren, 'Merriweather', 'Times New Roman', serif;
     height: 1rem;
   }
+  .more-info-btn {
+    float: right;
+  }
 }
 @include breakpoint($tablet) {
   .menu {

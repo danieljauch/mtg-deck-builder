@@ -43,7 +43,166 @@ export default class App extends Component {
 
     // Modal information
     this.modalListInfo = [
-      {modalTitle: '',
+      // Step label modals
+      {modalTitle: 'Format',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Deck Type',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Lands',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Creatures',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Spells',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Print / Export',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      
+      // Format modals
+      {modalTitle: 'Standard',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Modern',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Legacy',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Vintage',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Commander',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Conspiracy',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Pauper',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Peasant',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Silver Border Allowed',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      
+      // Deck archetype modals
+      {modalTitle: 'Reanimator',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Dredge',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Mill',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Tribal',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Control',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Burn',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Ramp',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Taxes',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Growth',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      
+      // Color modals
+      {modalTitle: 'White',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Blue',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Black',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Red',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Green',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      
+      // Land topic modals
+      {modalTitle: 'Mana curve',
+        modalContent: (
+          <div className="modal-content">
+          </div>
+        )},
+      {modalTitle: 'Land ratio',
         modalContent: (
           <div className="modal-content">
           </div>
@@ -183,7 +342,7 @@ export default class App extends Component {
     console.log(this.state);
   }
 	closeModals = _ => {
-		console.log('Toggling modal');
+		console.log('Closing modals');
     this.setState({
       modalOpen: false,
       currentlyOpenModal: ''
