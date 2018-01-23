@@ -18,15 +18,13 @@ export default class Modals extends Component {
 						<FontAwesome name="times" />
 					</div>
 				</div>
-				
-				{modalListInfo.map(item => {
-						return (
-							<Modal modalTitle={item.modalTitle}
-								modalContent={item.modalContent}
-								isOpen={openModal === item.modalTitle} />
-						);
-					}
-				)}
+				{
+					modalListInfo.map(item => (
+						<Modal modalTitle={item.modalTitle}
+							modalContent={item.modalContent}
+							isOpen={openModal === item.modalTitle} />
+					))
+				}
 			</section>
 		);
 	}

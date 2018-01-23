@@ -35,6 +35,9 @@
 .step-content-wrap {
   .step-box {
     background: rgba($white, .25);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: $taper-shadow;
     min-height: 24vh;
     cursor: pointer;
     transition: {
@@ -73,6 +76,7 @@
   .step-content-wrap {
     display: grid;
     grid: {
+      gap: .5rem;
       template: {
         columns: repeat(3, 1fr);
         rows: auto;
@@ -88,8 +92,8 @@
     }
     .step-box-caption {
       h3 {
-        font-size: 3em;
-        margin-top: 1.5em;
+        font-size: 2em;
+        margin-top: .5em;
       }
     }
   }

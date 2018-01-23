@@ -12,16 +12,15 @@ export default class MenuList extends Component {
 
 		return (
 			<ul className="menu-list">
-				{menuListItems.map(item => {
-						return (
-							<MenuItem stepNumber={item.stepNumber}
-								stepName={item.stepName}
-								chosenInfo={item.chosenInfo}
-								goToStep={_ => goToStep(item.stepNumber)}
-								openModal={openModal} />
-						);
-					}
-				)}
+				{
+					menuListItems.map(item => (
+						<MenuItem stepNumber={item.stepNumber}
+							stepName={item.stepName}
+							chosenInfo={item.chosenInfo}
+							goToStep={goToStep}
+							openModal={openModal} />
+					))
+				}
 			</ul>
 		)
 	}

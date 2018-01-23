@@ -8,6 +8,7 @@ export default class Main extends Component {
   render () {
 		let { currentStep,
 			openModal,
+			makeChoice,
 			stepListItems } = this.props;
 
 		return (
@@ -17,9 +18,10 @@ export default class Main extends Component {
 							<Step stepNumber={item.stepNumber}
 								stepName={item.stepName}
 								subHeaderText={item.subHeaderText}
-								stepContent={item.stepContent}
+								stepChoices={item.stepChoices}
 								isVisible={currentStep === item.stepNumber}
-								openModal={openModal} />
+								openModal={openModal}
+								makeChoice={makeChoice} />
 						);
 					}
 				)}

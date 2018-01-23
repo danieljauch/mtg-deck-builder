@@ -44,172 +44,209 @@ export default class App extends Component {
     // Modal information
     this.modalListInfo = [
       // Step label modals
-      {modalTitle: 'Format',
+      {
+        modalTitle: 'Format',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Deck Type',
+        )
+      }, {
+        modalTitle: 'Deck Type',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Lands',
+        )
+      }, {
+        modalTitle: 'Lands',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Creatures',
+        )
+      }, {
+        modalTitle: 'Creatures',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Spells',
+        )
+      }, {
+        modalTitle: 'Spells',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Print / Export',
+        )
+      }, {
+        modalTitle: 'Print / Export',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
+        )
+      },
       
       // Format modals
-      {modalTitle: 'Standard',
+      {
+        modalTitle: 'Standard',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Modern',
+        )
+      }, {
+        modalTitle: 'Modern',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Legacy',
+        )
+      }, {
+        modalTitle: 'Legacy',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Vintage',
+        )
+      }, {
+        modalTitle: 'Vintage',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Commander',
+        )
+      }, {
+        modalTitle: 'Commander',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Conspiracy',
+        )
+      }, {
+        modalTitle: 'Conspiracy',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Pauper',
+        )
+      }, {
+        modalTitle: 'Pauper',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Peasant',
+        )
+      }, {
+        modalTitle: 'Peasant',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Silver Border Allowed',
+        )
+      }, {
+        modalTitle: 'Silver Border Allowed',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
+        )
+      },
       
       // Deck archetype modals
-      {modalTitle: 'Reanimator',
+      {
+        modalTitle: 'Reanimator',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Dredge',
+        )
+      }, {
+        modalTitle: 'Dredge',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Mill',
+        )
+      }, {
+        modalTitle: 'Mill',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Tribal',
+        )
+      }, {
+        modalTitle: 'Tribal',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Control',
+        )
+      }, {
+        modalTitle: 'Control',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Burn',
+        )
+      }, {
+        modalTitle: 'Burn',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Ramp',
+        )
+      }, {
+        modalTitle: 'Ramp',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Taxes',
+        )
+      }, {
+        modalTitle: 'Taxes',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Growth',
+        )
+      }, {
+        modalTitle: 'Growth',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
+        )
+      },
       
       // Color modals
-      {modalTitle: 'White',
+      {
+        modalTitle: 'White',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Blue',
+        )
+      }, {
+        modalTitle: 'Blue',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Black',
+        )
+      }, {
+        modalTitle: 'Black',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Red',
+        )
+      }, {
+        modalTitle: 'Red',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Green',
+        )
+      }, {
+        modalTitle: 'Green',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
+        )
+      },
       
       // Land topic modals
-      {modalTitle: 'Mana curve',
+      {
+        modalTitle: 'Mana curve',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
-      {modalTitle: 'Land ratio',
+        )
+      }, {
+        modalTitle: 'Land ratio',
         modalContent: (
           <div className="modal-content">
           </div>
-        )},
+        )
+      },
 
       // App modals
-      {modalTitle: 'Changelog',
+      {
+        modalTitle: 'Changelog',
         modalContent: (
           <div className="modal-content">
             <section className="change-version-section">
@@ -239,75 +276,191 @@ export default class App extends Component {
               </ul>
             </section>
           </div>
-        )}
+        )
+      }
     ];
 
     // Menu items
     this.menuListItems = [
-      {stepNumber: 1,
+      {
+        stepNumber: 1,
         stepName: 'Format',
-        chosenInfo: ''},
-      {stepNumber: 2,
+        chosenInfo: ''
+      }, {
+        stepNumber: 2,
         stepName: 'Deck Type',
-        chosenInfo: ''},
-      {stepNumber: 3,
+        chosenInfo: ''
+      }, {
+        stepNumber: 3,
         stepName: 'Lands',
-        chosenInfo: ''},
-      {stepNumber: 4,
+        chosenInfo: ''
+      }, {
+        stepNumber: 4,
         stepName: 'Creatures',
-        chosenInfo: ''},
-      {stepNumber: 5,
+        chosenInfo: ''
+      }, {
+        stepNumber: 5,
         stepName: 'Spells',
-        chosenInfo: ''},
-      {stepNumber: 6,
+        chosenInfo: ''
+      }, {
+        stepNumber: 6,
         stepName: 'Print / Export',
-        chosenInfo: ''}
+        chosenInfo: ''
+      }
     ];
 
     // Steps
+    this.formatStepChoices = [
+      {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Standard',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Modern',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Legacy',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Vintage',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Commander',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Conspiracy',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Pauper',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Peasant',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Silver Border Allowed',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }
+    ];
+    this.deckTypeStepChoices = [
+      {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Reanimator',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Dredge',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Mill',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Tribal',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Control',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Burn',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Ramp',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Taxes',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }, {
+        stepChoiceType: 'figure',
+        stepChoiceName: 'Growth',
+        stepChoiceImage: '',
+        openModal: this.openModal,
+        makeChoice: this.makeChoice
+      }
+    ];
+    this.landStepChoices = [];
+    this.creatureStepChoices = [];
+    this.spellStepChoices = [];
+    this.printStepChoices = [];
+
     this.stepListItems = [
-      {stepNumber: 1, 
+      {
+        stepNumber: 1, 
         stepName: 'Format', 
         subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )},
-      {stepNumber: 2, 
-        stepName: 'Deck Type', 
-        subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )},
-      {stepNumber: 3, 
-        stepName: 'Lands', 
-        subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )},
-      {stepNumber: 4, 
+        stepChoices: this.formatStepChoices
+      }, {
+        stepNumber: 2,
+        stepName: 'Deck Type',
+        subHeaderText: '',
+        stepChoices: this.deckTypeStepChoices
+      }, {
+        stepNumber: 3,
+        stepName: 'Lands',
+        subHeaderText: '',
+        stepChoices: this.landStepChoices
+      }, {
+        stepNumber: 4, 
         stepName: 'Creatures', 
         subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )},
-      {stepNumber: 5, 
+        stepChoices: this.creatureStepChoices
+      }, {
+        stepNumber: 5, 
         stepName: 'Spells', 
         subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )},
-      {stepNumber: 6, 
+        stepChoices: this.spellStepChoices
+      }, {
+        stepNumber: 6, 
         stepName: 'Print / Export', 
         subHeaderText: '', 
-        stepContent: (
-          <div className="step-content">
-          </div>
-        )}
+        stepChoices: this.printStepChoices
+      }
     ];
   }
 
@@ -402,7 +555,8 @@ export default class App extends Component {
           
         <Main currentStep={this.state.currentStep}
           stepListItems={this.stepListItems}
-          openModal={this.openModal} />
+          openModal={this.openModal}
+          makeChoice={this.makeChoice} />
       </div>
     );
   }

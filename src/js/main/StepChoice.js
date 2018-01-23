@@ -7,12 +7,13 @@ export default class StepChoice extends Component {
 		let { stepChoiceType,
 			stepChoiceName,
 			stepChoiceImage,
-			openModal } = this.props;
+			openModal,
+			makeChoice } = this.props;
 
 		return (
-			<div className="step-content-wrap">
+			<div>
 				{stepChoiceType === 'figure' &&
-					<figure className="step-box">
+					<figure className="step-box" onClick={_ => makeChoice(stepChoiceName)}>
 						<img src={stepChoiceImage} alt={stepChoiceName} className="step-box-image" />
 						<figcaption className="step-box-caption">
 							<h3>{stepChoiceName}</h3>
