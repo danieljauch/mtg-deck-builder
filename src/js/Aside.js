@@ -15,8 +15,7 @@ export default class Aside extends Component {
 			openModal,
 			menuListItems,
 			version,
-			creditLink,
-			copyrightYear } = this.props;
+			creditLink } = this.props;
 
 		return (
 			<aside className="app-aside">
@@ -33,7 +32,6 @@ export default class Aside extends Component {
 
 				<AppFooter creditLink={creditLink}
 					versionNumber={`v. ${version}`}
-					copyrightYear={copyrightYear}
 					openModal={openModal} />
 			</aside>
 		)

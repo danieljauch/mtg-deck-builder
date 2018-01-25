@@ -23,7 +23,6 @@ export default class App extends Component {
     this.appTitle = 'MTG Deck Builder';
     this.logoURL = '';
     this.creditLink = 'https://danieljauch.bitbucket.io/';
-    this.copyrightYear = '2018';
 
     // App state
     this.state = {
@@ -550,8 +549,7 @@ export default class App extends Component {
           openModal={this.openModal}
           menuListItems={this.menuListItems}
           version={version}
-          creditLink={this.creditLink}
-          copyrightYear={this.copyrightYear} />
+          creditLink={this.creditLink} />
           
         <Main currentStep={this.state.currentStep}
           stepListItems={this.stepListItems}
