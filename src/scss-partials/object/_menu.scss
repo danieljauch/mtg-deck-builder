@@ -16,35 +16,6 @@
     }
   }
 }
-.mobile-menu-toggle {
-  position: absolute;
-  top: .5em;
-  right: .5em;
-  z-index: 22;
-  color: rgba(darken($white, 10%), .9);
-  text-shadow: 1px .125rem .5rem rgba($black, .5);
-  transition: {
-    property: right;
-    duration: .5s;
-    timing-function: $cubic;
-  }
-  font-size: 2em;
-}
-.mobile-menu-dark-back {
-  background: rgba($black, .9);
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 0;
-  height: 100vh;
-  z-index: 21;
-  opacity: 0;
-  transition: {
-    property: opacity;
-    duration: .5s;
-    timing-function: $cubic;
-  }
-}
 .menu-list {
   @include pseudo-list;
   background: $mtg-common;
@@ -63,38 +34,73 @@
 }
 .menu-item {
   padding-bottom: .5em;
-  .step-number, .step-type {
+  .step-number {
+    color: rgba($white, .25);
+    font-size: 1.5rem;
     transition: {
-      property: color;
+      property: color, font-size;
       duration: .2s;
       timing-function: $cubic;
     }
   }
-  .step-number {
-    color: rgba($white, .25);
-  }
   .step-type {
     color: rgba($white, .75);
     font-weight: bold;
+    opacity: 0;
+    max-width: 0;
+    transition: {
+      property: color, opacity, max-width;
+      duration: .2s;
+      timing-function: $cubic;
+    }
   }
   .chosen-info {
     color: $green;
     text-shadow: .0625rem .125rem .25rem rgba($black, .5);
     text-align: center;
     font-family: beleren, 'Merriweather', 'Times New Roman', serif;
-    height: 1rem;
+    opacity: 0;
+    transform: translateX(-5rem);
+    height: 0;
+    transition: {
+      property: opacity, transform, height;
+      duration: .2s;
+      timing-function: $cubic;
+    }
   }
   .more-info-btn {
     float: right;
     margin-top: -1.25rem;
+    opacity: 0;
+    transform: translateX(-5rem);
+    transition: {
+      property: opacity, transform;
+      duration: .2s;
+      timing-function: $cubic;
+    }
+  }
+}
+.app-aside.open {
+  .step-number {
+    font-size: 1rem;
+  }
+  .step-type {
+    opacity: 1;
+    max-width: 5rem;
+  }
+  .chosen-info {
+    opacity: 1;
+    transform: translateX(0);
+    height: 1rem;
+  }
+  .more-info-btn {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @include breakpoint($tablet) {
   .menu {
 
-  }
-  .mobile-menu-toggle, .mobile-menu-dark-back {
-    @include do-not-show;
   }
   .menu-list {
     position: relative;

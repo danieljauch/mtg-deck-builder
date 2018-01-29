@@ -50,6 +50,10 @@ The format choice is where you pick how you're playing the game (currently, ther
 
 ## Features to come
 
+	- More constructed formats
+		- 1v1 commander
+		- Two-headed giant
+		- Frontier
 	- Limited formats
 		- Block draft
 			- Standard vs. past
