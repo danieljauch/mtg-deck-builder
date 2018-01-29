@@ -13,13 +13,14 @@ export default class Main extends Component {
 
 		return (
 			<main className="app-main">
-				{stepListItems.map(item => {
+				{stepListItems.map(step => {
 						return (
-							<Step stepNumber={item.stepNumber}
-								stepName={item.stepName}
-								subHeaderText={item.subHeaderText}
-								stepChoices={item.stepChoices}
-								isVisible={currentStep === item.stepNumber}
+							<Step key={step.stepNumber}
+								stepNumber={step.stepNumber}
+								stepName={step.stepName}
+								subHeaderText={step.subHeaderText}
+								stepChoices={step.stepChoices}
+								isVisible={currentStep === step.stepNumber}
 								openModal={openModal}
 								makeChoice={makeChoice} />
 						);

@@ -2,12 +2,24 @@
 import React, { Component } from 'react';
 
 // Stylesheets:
+import './css/font-awesome.min.css';
+import './css/keyrune.min.css';
 import './App.scss';
+
+// Image assets
+import standardFormatImage from './img/format/standard.jpg';
+import modernFormatImage from './img/format/modern.jpg';
+import legacyFormatImage from './img/format/legacy.jpg';
+import vintageFormatImage from './img/format/vintage.jpg';
+import commanderFormatImage from './img/format/commander.jpg';
+import pauperFormatImage from './img/format/pauper.jpg';
+// import peasantFormatImage from './img/format/peasant.jpg';
+import conspiracyFormatImage from './img/format/conspiracy.jpg';
+import silverBorderFormatImage from './img/format/silver-border.jpg';
 
 // Font utilities:
 // https://andrewgioia.github.io/Keyrune/icons.html
 // https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css
-// https://use.fontawesome.com/bf7c42290d.js
 
 // JavaScript libraries and files:
 import { version } from '../package.json';
@@ -131,7 +143,7 @@ export default class App extends Component {
           </div>
         )
       }, {
-        modalTitle: 'Silver Border Allowed',
+        modalTitle: 'Silver Border',
         modalContent: (
           <div className="modal-content">
           </div>
@@ -313,43 +325,43 @@ export default class App extends Component {
       {
         stepChoiceType: 'figure',
         stepChoiceName: 'Standard',
-        stepChoiceImage: '',
+        stepChoiceImage: standardFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Modern',
-        stepChoiceImage: '',
+        stepChoiceImage: modernFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Legacy',
-        stepChoiceImage: '',
+        stepChoiceImage: legacyFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Vintage',
-        stepChoiceImage: '',
+        stepChoiceImage: vintageFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Commander',
-        stepChoiceImage: '',
+        stepChoiceImage: commanderFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Conspiracy',
-        stepChoiceImage: '',
+        stepChoiceImage: conspiracyFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
         stepChoiceName: 'Pauper',
-        stepChoiceImage: '',
+        stepChoiceImage: pauperFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }, {
@@ -360,8 +372,8 @@ export default class App extends Component {
         makeChoice: this.makeChoice
       }, {
         stepChoiceType: 'figure',
-        stepChoiceName: 'Silver Border Allowed',
-        stepChoiceImage: '',
+        stepChoiceName: 'Silver Border',
+        stepChoiceImage: silverBorderFormatImage,
         openModal: this.openModal,
         makeChoice: this.makeChoice
       }

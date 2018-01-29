@@ -5,7 +5,6 @@ export default class AppFooter extends Component {
 	render () {
 		let { creditLink,
 			versionNumber,
-			copyrightYear,
 			openModal } = this.props;
 
 		return (

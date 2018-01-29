@@ -19,10 +19,11 @@ export default class Modals extends Component {
 					</div>
 				</div>
 				{
-					modalListInfo.map(item => (
-						<Modal modalTitle={item.modalTitle}
-							modalContent={item.modalContent}
-							isOpen={openModal === item.modalTitle} />
+					modalListInfo.map(modal => (
+						<Modal key={modal.modalTitle}
+							modalTitle={modal.modalTitle}
+							modalContent={modal.modalContent}
+							isOpen={openModal === modal.modalTitle} />
 					))
 				}
 			</section>

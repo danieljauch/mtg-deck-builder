@@ -22,10 +22,11 @@ export default class Step extends Component {
 				</header>
 				<div className="step-content-wrap">
 					{
-						stepChoices.map(item => (
-							<StepChoice stepChoiceType={item.stepChoiceType}
-								stepChoiceName={item.stepChoiceName}
-								stepChoiceImage={item.stepChoiceImage}
+						stepChoices.map(step => (
+							<StepChoice key={step.stepChoiceName}
+								stepChoiceType={step.stepChoiceType}
+								stepChoiceName={step.stepChoiceName}
+								stepChoiceImage={step.stepChoiceImage}
 								openModal={openModal}
 								makeChoice={makeChoice} />
 						))

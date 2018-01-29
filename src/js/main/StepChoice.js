@@ -1,5 +1,5 @@
 // Core Components:
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 export default class StepChoice extends Component {
@@ -11,7 +11,7 @@ export default class StepChoice extends Component {
 			makeChoice } = this.props;
 
 		return (
-			<div>
+			<Fragment>
 				{stepChoiceType === 'figure' &&
 					<figure className="step-box" onClick={_ => makeChoice(stepChoiceName)}>
 						<img src={stepChoiceImage} alt={stepChoiceName} className="step-box-image" />
@@ -21,7 +21,7 @@ export default class StepChoice extends Component {
 						</figcaption>
 					</figure>
 				}
-			</div>
+			</Fragment>
 		);
 	}
 }

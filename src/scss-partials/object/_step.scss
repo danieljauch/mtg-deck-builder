@@ -32,33 +32,36 @@
 
   }
 }
-.step-content-wrap {
-  .step-box {
-    background: rgba($white, .25);
-    border-radius: .5rem;
-    overflow: hidden;
-    box-shadow: $taper-shadow;
-    min-height: 24vh;
-    cursor: pointer;
-    transition: {
-      property: background;
-      duration: .5s;
-      timing-function: $cubic;
-    }
-    .more-info-icon {
+.step-box {
+  background: rgba($black, .5);
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: $taper-shadow;
+  min-height: 20vh;
+  cursor: pointer;
+  transition: {
+    property: background;
+    duration: .2s;
+    timing-function: $cubic;
+  }
+  .more-info-icon {
 
-    }
-    &:hover {
-      background: rgba($black, .5);
-      .step-box-image {
-        opacity: 1;
-      }
+  }
+  &:hover {
+    background: $black;
+    .step-box-image {
+      opacity: .75;
     }
   }
 }
 .step-box-image {
   position: absolute;
   opacity: .5;
+  transition: {
+    property: opacity;
+    duration: .2s;
+    timing-function: $cubic;
+  }
 }
 .step-box-caption {
   position: absolute;

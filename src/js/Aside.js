@@ -20,7 +20,6 @@ export default class Aside extends Component {
 		return (
 			<aside className="app-aside">
 				<button className="btn toggle-menu-btn" onClick={toggleMenu}>
-					&lt;-
 					<FontAwesome name="arrow-left" />
 				</button>
 
