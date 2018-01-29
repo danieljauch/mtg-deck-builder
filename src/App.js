@@ -22,6 +22,9 @@ import { version } from '../package.json';
 import Modals from './js/Modals.js';
 import Aside from './js/Aside.js';
 import Main from './js/Main.js';
+import CardSearch from './js/CardSearch.js';
+
+const cs = new CardSearch();
 
 export default class App extends Component {
   constructor (props) {
@@ -480,6 +483,7 @@ export default class App extends Component {
     switch (this.state.currentStep) {
       case 2:
         console.log("Choice made on step 2");
+        this.menuListItems[1].chosenInfo = choice;
         this.setState({
           currentStep: 3,
           chosenDeckArchetype: choice
@@ -488,6 +492,7 @@ export default class App extends Component {
 
       case 3:
         console.log("Choice made on step 3");
+        // this.menuListItems[2].chosenInfo = choice;
         this.setState({
           currentStep: 4,
           chosenLands: choice
@@ -496,6 +501,7 @@ export default class App extends Component {
 
       case 4:
         console.log("Choice made on step 4");
+        // this.menuListItems[3].chosenInfo = choice;
         this.setState({
           currentStep: 5,
           chosenCreatures: choice
@@ -504,6 +510,7 @@ export default class App extends Component {
 
       case 5:
         console.log("Choice made on step 5");
+        // this.menuListItems[4].chosenInfo = choice;
         this.setState({
           currentStep: 6,
           chosenSpells: choice
@@ -512,6 +519,7 @@ export default class App extends Component {
 
       default: // 1
         console.log("Choice made on step 1");
+        this.menuListItems[0].chosenInfo = choice;
         this.setState({
           currentStep: 2,
           chosenFormat: choice
