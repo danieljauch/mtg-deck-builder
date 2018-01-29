@@ -9,7 +9,7 @@ import AppFooter from './aside/AppFooter.js';
 export default class Aside extends Component {
 	render () {
 		let { siteTitle,
-			logoURL,
+			// logoURL,
 			goToStep,
 			toggleMenu,
 			openModal,
@@ -24,7 +24,7 @@ export default class Aside extends Component {
 				</button>
 
 				<AppHeader siteTitle={siteTitle}
-					logoURL={logoURL}
+					// logoURL={logoURL}
 					goToStep={goToStep}
 					menuListItems={menuListItems}
 					openModal={openModal} />

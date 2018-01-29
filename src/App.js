@@ -17,10 +17,6 @@ import pauperFormatImage from './img/format/pauper.jpg';
 import conspiracyFormatImage from './img/format/conspiracy.jpg';
 import silverBorderFormatImage from './img/format/silver-border.jpg';
 
-// Font utilities:
-// https://andrewgioia.github.io/Keyrune/icons.html
-// https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css
-
 // JavaScript libraries and files:
 import { version } from '../package.json';
 import Modals from './js/Modals.js';
@@ -33,7 +29,7 @@ export default class App extends Component {
 
     // Basic application details
     this.appTitle = 'MTG Deck Builder';
-    this.logoURL = '';
+    // this.logoURL = '';
     this.creditLink = 'https://danieljauch.bitbucket.io/';
 
     // App state
@@ -555,7 +551,7 @@ export default class App extends Component {
           closeModals={this.closeModals} />
           
         <Aside siteTitle={this.appTitle}
-          logoURL={this.logoURL}
+          // logoURL={this.logoURL}
           goToStep={this.goToStep}
           toggleMobileMenu={this.toggleMenu}
           openModal={this.openModal}

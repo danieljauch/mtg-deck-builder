@@ -7,7 +7,7 @@ import NavMenu from './NavMenu.js';
 export default class AppHeader extends Component {
 	render () {
 		let { siteTitle,
-			logoURL,
+			// logoURL,
 			goToStep,
 			menuListItems,
 			openModal } = this.props;
@@ -15,7 +15,7 @@ export default class AppHeader extends Component {
 		return (
 			<header className="app-header">
 				<h1 className="header-title">{siteTitle}</h1>
-				<img src={logoURL} alt={siteTitle} className="logo" />
+				{/* <img src={logoURL} alt={siteTitle} className="logo" /> */}
 				
 				<NavMenu goToStep={goToStep}
 					menuListItems={menuListItems}
