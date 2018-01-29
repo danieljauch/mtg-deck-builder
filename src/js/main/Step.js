@@ -1,5 +1,6 @@
 // Core Components:
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 
 // JavaScript libraries and files:
 import StepChoice from './StepChoice.js';
@@ -12,11 +13,18 @@ export default class Step extends Component {
 			stepChoices,
 			openModal,
 			makeChoice,
+			goBack,
 			isVisible } = this.props;
 
 		return (
 			<section className={isVisible ? "step active" : "step"}>
 				<header className="step-header">
+					{stepNumber > 1 &&
+						<button className="step-back-button" onClick={_ => goBack()}>
+							<FontAwesome name="arrow-left" />
+							<span> Back</span>
+						</button>
+					}
 					<h2>Step #{stepNumber}: {stepName}</h2>
 					<div className="sub-header">{subHeaderText}</div>
 				</header>

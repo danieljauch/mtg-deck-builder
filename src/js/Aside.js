@@ -4,28 +4,30 @@ import FontAwesome from 'react-fontawesome';
 
 // JavaScript libraries and files:
 import AppHeader from './aside/AppHeader.js';
+import NavMenu from './aside/NavMenu.js';
 import AppFooter from './aside/AppFooter.js';
 
 export default class Aside extends Component {
 	render () {
 		let { siteTitle,
+			isOpen,
 			// logoURL,
 			goToStep,
-			toggleMenu,
+			toggleAside,
 			openModal,
 			menuListItems,
 			version,
 			creditLink } = this.props;
 
 		return (
-			<aside className="app-aside">
-				<button className="btn toggle-menu-btn" onClick={toggleMenu}>
-					<FontAwesome name="arrow-left" />
+			<aside className={isOpen ? "open app-aside" : "app-aside"}>
+				<button className="btn toggle-menu-btn" onClick={_ => toggleAside()}>
+					<FontAwesome name="times" />
 				</button>
 
-				<AppHeader siteTitle={siteTitle}
-					// logoURL={logoURL}
-					goToStep={goToStep}
+				<AppHeader siteTitle={siteTitle} />
+				
+				<NavMenu goToStep={goToStep}
 					menuListItems={menuListItems}
 					openModal={openModal} />
 

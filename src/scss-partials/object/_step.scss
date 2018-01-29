@@ -7,24 +7,30 @@
   padding: 1rem;
   overflow: hidden;
   opacity: 0;
-  transform: translateX(25%);
   z-index: 1;
   transition: {
-    property: opacity, transform;
+    property: opacity;
     duration: .5s;
     timing-function: $cubic;
   }
   &.active {
     opacity: 1;
-    transform: translateX(0);
     z-index: 5;
   }
 }
 .step-header {
+  position: relative;
   padding: 1rem;
   margin: -1rem -1rem 1rem;
-  background: linear-gradient(to right, $blue, $green);
+  background: linear-gradient(to right, darken($blue, 10%), $green);
   box-shadow: 0 .25rem 2rem rgba($black, .25);
+  .step-back-button {
+    position: absolute;
+    top: .5rem;
+    left: 1.5rem;
+    z-index: 20;
+    font-size: 1.5rem;
+  }
   h2 {
     text-align: right;
   }
@@ -75,6 +81,46 @@
     font-size: 2em;
   }
 }
+.step-card-wrap {
+  position: relative;
+  .step-card-image, .step-card-back-image {
+    backface-visibility: hidden;
+  }
+  .step-card-image {
+    box-shadow: $taper-shadow;
+    max-height: 30vh;
+  }
+  .card-flip-icon {
+    position: absolute;
+    top: 15vh;
+    right: 10%;
+    background: rgba($white, .9);
+    color: rgba($black, .9);
+    box-shadow: $taper-shadow;
+    transition: {
+      property: color, background;
+      duration: .2s;
+      timing-function: $cubic;
+    }
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+  .step-card-back-image {
+
+  }
+  &.flipped {
+    .card-flip-icon {
+      background: rgba($black, .9);
+      color: rgba($white, .9);
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+}
 @include breakpoint($tablet) {
   .step-content-wrap {
     display: grid;
@@ -97,6 +143,17 @@
       h3 {
         font-size: 2em;
         margin-top: .5em;
+      }
+    }
+    .step-card-wrap {
+      .step-card-image {
+        
+      }
+      .card-flip-icon {
+
+      }
+      .step-card-back-image {
+        
       }
     }
   }

@@ -8,7 +8,7 @@ export default class AppFooter extends Component {
 			openModal } = this.props;
 
 		return (
-			<footer className="site-footer">
+			<footer className="app-footer">
 				<div className="credit">Made by <a href={creditLink} target="_blank">Daniel Jauch</a></div>
 				<div>
 					<span className="copyright">&copy; {(new Date()).getFullYear()}</span>

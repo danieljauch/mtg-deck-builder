@@ -1,14 +1,25 @@
 .app-aside {
 	position: relative;
 	order: 1;
-	flex-basis: 15%;
+	flex-basis: 5%;
 	flex-grow: 1;
-  background: linear-gradient($blue, darken($blue, 10%));
-  box-shadow: inset 0 .25rem 2rem rgba($black, .25);
+  background: linear-gradient(lighten($black, 10%), lighten($black, 25%));
+  box-shadow: inset -.25rem 0 2rem rgba($black, .25);
 	padding: .5rem;
+  transition: {
+    property: flex-basis, flex-grow;
+    duration: .2s;
+    timing-function: $cubic;
+  }
 	.toggle-menu-btn {
 		position: absolute;
 		top: .5rem;
-		right: .5rem;
+		right: -1rem;
+		font-size: 1.5rem;
+		z-index: 20;
+	}
+	&.open {
+		flex-basis: 15%;
+		flex-grow: 2;
 	}
 }

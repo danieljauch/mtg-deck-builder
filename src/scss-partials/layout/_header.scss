@@ -4,10 +4,26 @@
 .header-title {
 	margin: 0;
 	font-size: 1.25em;
-}
-.logo {
-
+	opacity: 0;
+	transform: translateX(-5rem);
+  transition: {
+    property: opacity, transform;
+    duration: .2s;
+    timing-function: $cubic;
+  }
 }
 .menu {
 
+}
+.app-aside.open {
+	.app-header {
+
+	}
+	.header-title {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	.menu {
+
+	}
 }

@@ -9,6 +9,7 @@ export default class Main extends Component {
 		let { currentStep,
 			openModal,
 			makeChoice,
+			goBack,
 			stepListItems } = this.props;
 
 		return (
@@ -22,7 +23,8 @@ export default class Main extends Component {
 								stepChoices={step.stepChoices}
 								isVisible={currentStep === step.stepNumber}
 								openModal={openModal}
-								makeChoice={makeChoice} />
+								makeChoice={makeChoice}
+								goBack={goBack} />
 						);
 					}
 				)}

@@ -24,7 +24,7 @@ import Aside from './js/Aside.js';
 import Main from './js/Main.js';
 import CardSearch from './js/CardSearch.js';
 
-const cs = new CardSearch();
+let cs = new CardSearch();
 
 export default class App extends Component {
   constructor (props) {
@@ -39,7 +39,7 @@ export default class App extends Component {
     this.state = {
       error: false,
       mobileMenuVisible: false,
-      menuOpen: false,
+      asideOpen: window.innerWidth >= 1280,
       modalOpen: false,
       currentlyOpenModal: '',
       currentStep: 1,
@@ -303,173 +303,164 @@ export default class App extends Component {
       }, {
         stepNumber: 3,
         stepName: 'Lands',
-        chosenInfo: ''
+        chosenInfo: []
       }, {
         stepNumber: 4,
         stepName: 'Creatures',
-        chosenInfo: ''
+        chosenInfo: []
       }, {
         stepNumber: 5,
         stepName: 'Spells',
-        chosenInfo: ''
+        chosenInfo: []
       }, {
         stepNumber: 6,
-        stepName: 'Print / Export',
-        chosenInfo: ''
+        stepName: 'Print / Export'
       }
     ];
-
-    // Steps
-    this.formatStepChoices = [
-      {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Standard',
-        stepChoiceImage: standardFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Modern',
-        stepChoiceImage: modernFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Legacy',
-        stepChoiceImage: legacyFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Vintage',
-        stepChoiceImage: vintageFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Commander',
-        stepChoiceImage: commanderFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Conspiracy',
-        stepChoiceImage: conspiracyFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Pauper',
-        stepChoiceImage: pauperFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Peasant',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Silver Border',
-        stepChoiceImage: silverBorderFormatImage,
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }
-    ];
-    this.deckTypeStepChoices = [
-      {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Reanimator',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Dredge',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Mill',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Tribal',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Control',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Burn',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Ramp',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Taxes',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }, {
-        stepChoiceType: 'figure',
-        stepChoiceName: 'Growth',
-        stepChoiceImage: '',
-        openModal: this.openModal,
-        makeChoice: this.makeChoice
-      }
-    ];
-    this.landStepChoices = [];
-    this.creatureStepChoices = [];
-    this.spellStepChoices = [];
-    this.printStepChoices = [];
 
     this.stepListItems = [
       {
         stepNumber: 1, 
         stepName: 'Format', 
         subHeaderText: '', 
-        stepChoices: this.formatStepChoices
+        stepChoices: [
+          {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Standard',
+            stepChoiceImage: standardFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Modern',
+            stepChoiceImage: modernFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Legacy',
+            stepChoiceImage: legacyFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Vintage',
+            stepChoiceImage: vintageFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Commander',
+            stepChoiceImage: commanderFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Conspiracy',
+            stepChoiceImage: conspiracyFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Pauper',
+            stepChoiceImage: pauperFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Peasant',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Silver Border',
+            stepChoiceImage: silverBorderFormatImage,
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }
+        ]
       }, {
         stepNumber: 2,
         stepName: 'Deck Type',
         subHeaderText: '',
-        stepChoices: this.deckTypeStepChoices
+        stepChoices: [
+          {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Reanimator',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Dredge',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Mill',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Tribal',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Control',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Burn',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Ramp',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Taxes',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }, {
+            stepChoiceType: 'figure',
+            stepChoiceName: 'Growth',
+            stepChoiceImage: '',
+            openModal: this.openModal,
+            makeChoice: this.makeChoice
+          }
+        ]
       }, {
         stepNumber: 3,
         stepName: 'Lands',
         subHeaderText: '',
-        stepChoices: this.landStepChoices
+        stepChoices: []
       }, {
         stepNumber: 4, 
         stepName: 'Creatures', 
         subHeaderText: '', 
-        stepChoices: this.creatureStepChoices
+        stepChoices: []
       }, {
         stepNumber: 5, 
         stepName: 'Spells', 
         subHeaderText: '', 
-        stepChoices: this.spellStepChoices
+        stepChoices: []
       }, {
         stepNumber: 6, 
         stepName: 'Print / Export', 
         subHeaderText: '', 
-        stepChoices: this.printStepChoices
+        stepChoices: []
       }
     ];
   }
@@ -492,7 +483,7 @@ export default class App extends Component {
 
       case 3:
         console.log("Choice made on step 3");
-        // this.menuListItems[2].chosenInfo = choice;
+        this.menuListItems[2].chosenInfo = choice;
         this.setState({
           currentStep: 4,
           chosenLands: choice
@@ -501,7 +492,7 @@ export default class App extends Component {
 
       case 4:
         console.log("Choice made on step 4");
-        // this.menuListItems[3].chosenInfo = choice;
+        this.menuListItems[3].chosenInfo = choice;
         this.setState({
           currentStep: 5,
           chosenCreatures: choice
@@ -510,7 +501,7 @@ export default class App extends Component {
 
       case 5:
         console.log("Choice made on step 5");
-        // this.menuListItems[4].chosenInfo = choice;
+        this.menuListItems[4].chosenInfo = choice;
         this.setState({
           currentStep: 6,
           chosenSpells: choice
@@ -527,10 +518,17 @@ export default class App extends Component {
     }
     console.log(this.state);
   }
-	toggleMenu = _ => {
-		console.log('Toggling menu');
+  goBack = _ => {
+		console.log('Going back');
     this.setState({
-      menuOpen: !this.state.menuOpen
+      currentStep: this.state.currentStep - 1
+    });
+    console.log(this.state);
+  }
+	toggleAside = _ => {
+		console.log('Toggling aside');
+    this.setState({
+      asideOpen: !this.state.asideOpen
     });
     console.log(this.state);
   }
@@ -559,9 +557,10 @@ export default class App extends Component {
           closeModals={this.closeModals} />
           
         <Aside siteTitle={this.appTitle}
+          isOpen={this.state.asideOpen}
           // logoURL={this.logoURL}
           goToStep={this.goToStep}
-          toggleMobileMenu={this.toggleMenu}
+          toggleAside={this.toggleAside}
           openModal={this.openModal}
           menuListItems={this.menuListItems}
           version={version}
@@ -570,7 +569,8 @@ export default class App extends Component {
         <Main currentStep={this.state.currentStep}
           stepListItems={this.stepListItems}
           openModal={this.openModal}
-          makeChoice={this.makeChoice} />
+          makeChoice={this.makeChoice}
+          goBack={this.goBack} />
       </div>
     );
   }

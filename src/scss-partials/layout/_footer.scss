@@ -1,4 +1,4 @@
-.site-footer {
+.app-footer {
   position: absolute;
   bottom: .5rem;
   left: .5rem;
@@ -6,8 +6,15 @@
   width: calc(100% - 1rem);
   color: rgba(darken($white, 10%), .9);
   font-size: .8em;
+	opacity: 0;
+	transform: translateX(-5rem);
+  transition: {
+    property: opacity, transform;
+    duration: .2s;
+    timing-function: $cubic;
+  }
   a {
-    // color: rgba(lighten($black, 5%), .5);
+    color: rgba(lighten($blue, 10%), .9);
   }
   .copyright {
 
@@ -18,5 +25,11 @@
   .version-info {
     float: right;
     cursor: pointer;
+  }
+}
+.app-aside.open {
+  .app-footer {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
