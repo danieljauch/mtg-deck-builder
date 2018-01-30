@@ -26,6 +26,14 @@ import CardSearch from './js/CardSearch.js';
 
 let cs = new CardSearch();
 
+cs.cardSearch({
+  types: "Land",
+  legalities: {
+    format: "Standard",
+    legality: "Legal"
+  }
+})
+
 export default class App extends Component {
   constructor (props) {
     super(props);

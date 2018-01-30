@@ -34,8 +34,8 @@ The format choice is where you pick how you're playing the game (currently, ther
 
 ### **STEP 3:** Lands
 
-	- Mana curve
-	- Land Ratio
+	- [Mana curve](https://www.channelfireball.com/articles/frank-analysis-finding-the-optimal-mana-curve-via-computer-simulation/)
+	- [Land Ratio](https://www.mtggoldfish.com/articles/brewer-s-minute-how-many-lands)
 
 ### **STEP 4:** Creatures
 
@@ -71,4 +71,3 @@ The format choice is where you pick how you're playing the game (currently, ther
 ---
 
 ## Known issues
-
