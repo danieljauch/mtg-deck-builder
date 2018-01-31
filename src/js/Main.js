@@ -3,6 +3,17 @@ import React, { Component } from 'react';
 
 // JavaScript libraries and files:
 import Step from './main/Step.js';
+import CardSearch from './main/CardSearch.js';
+
+let cs = new CardSearch();
+
+cs.cardSearch({
+  types: "Land",
+  legalities: {
+    format: "Standard",
+    legality: "Legal"
+  }
+});
 
 export default class Main extends Component {
   render () {

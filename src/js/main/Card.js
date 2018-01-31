@@ -1,49 +1,7 @@
-// https://github.com/MagicTheGathering/mtg-sdk-javascript
-import mtg, { card, set } from 'mtgsdk';
+// Core Components:
+import React, { Component } from 'react';
 
-export default class CardSearch {
-  constructor () {
-		
-	}
-
-	cardSearch (query) {
-		card.where(query)
-			.then(result => {
-				console.log('card search result for:');
-				console.log(query);
-				console.log('---');
-				console.log(result);
-				console.log('new card:');
-				let firstResult = result[0];
-				let firstResultCard = new Card(
-					firstResult.name,
-					firstResult.cmc,
-					firstResult.colorIdentity,
-					firstResult.colors,
-					firstResult.id,
-					firstResult.layout,
-					firstResult.legalities,
-					firstResult.manaCost,
-					firstResult.rarity,
-					firstResult.text,
-					firstResult.type,
-					firstResult.types
-				);
-				console.log(firstResultCard);
-			});
-	}
-	setSearch (query) {
-		set.where(query)
-			.then(result => {
-				console.log('set search result for:');
-				console.log(query);
-				console.log('---');
-				console.log(result);
-			});
-	}
-}
-
-class Card {
+export default class Card {
 	constructor (name, 	// String				| "Duress"
 			cmc, 						// int					| 1
 			colorIdentity, 	// String Array	| ["B"]
@@ -64,8 +22,6 @@ class Card {
 			text,						// String				| "Target opponent reveals his or her hand. You choose a noncreature, nonland card from it. That player discards that card."
 			type,						// String				| "Sorcery"
 			types						/* String Array	| ["Sorcery"] */) {
-
-		console.log('new card created!');
 		
 		this.name = name;
 		this.cmc = cmc;
@@ -207,68 +163,68 @@ const makeSymbolImageSrc = str => {
 					outputReplacement[i+1] = <img src='' alt='{S}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'W/U':
+					outputReplacement[i+1] = <img src='' alt='{W/U}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'W/B':
+					outputReplacement[i+1] = <img src='' alt='{W/B}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'U/B':
+					outputReplacement[i+1] = <img src='' alt='{U/B}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'U/R':
+					outputReplacement[i+1] = <img src='' alt='{U/R}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'B/R':
+					outputReplacement[i+1] = <img src='' alt='{B/R}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'B/G':
+					outputReplacement[i+1] = <img src='' alt='{B/G}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'R/W':
+					outputReplacement[i+1] = <img src='' alt='{R/W}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'R/G':
+					outputReplacement[i+1] = <img src='' alt='{R/G}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'G/W':
+					outputReplacement[i+1] = <img src='' alt='{G/W}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'G/U':
+					outputReplacement[i+1] = <img src='' alt='{G/U}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/W':
+					outputReplacement[i+1] = <img src='' alt='{P/W}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/U':
+					outputReplacement[i+1] = <img src='' alt='{P/U}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/B':
+					outputReplacement[i+1] = <img src='' alt='{P/B}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/R':
+					outputReplacement[i+1] = <img src='' alt='{P/R}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/G':
+					outputReplacement[i+1] = <img src='' alt='{P/G}' />;
 					break;
 
-				case '':
-					outputReplacement[i+1] = <img src='' alt='{}' />;
+				case 'P/C':
+					outputReplacement[i+1] = <img src='' alt='{P/C}' />;
 					break;
 				
 				default: // '{0}'

@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 
 // Stylesheets:
-import './css/font-awesome.min.css';
-import './css/keyrune.min.css';
+import './css/font-awesome.min.css';  // Docs: https://github.com/danawoodman/react-fontawesome/blob/master/api.md
+import './css/keyrune.min.css';       // Docs: https://andrewgioia.github.io/Keyrune/
 import './App.scss';
 
 // Image assets
@@ -22,17 +22,6 @@ import { version } from '../package.json';
 import Modals from './js/Modals.js';
 import Aside from './js/Aside.js';
 import Main from './js/Main.js';
-import CardSearch from './js/CardSearch.js';
-
-let cs = new CardSearch();
-
-cs.cardSearch({
-  types: "Land",
-  legalities: {
-    format: "Standard",
-    legality: "Legal"
-  }
-})
 
 export default class App extends Component {
   constructor (props) {
