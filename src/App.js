@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Stylesheets:
 import './css/font-awesome.min.css';  // Docs: https://github.com/danawoodman/react-fontawesome/blob/master/api.md
 import './css/keyrune.min.css';       // Docs: https://andrewgioia.github.io/Keyrune/
+import './css/mana.min.css';          // Docs: https://andrewgioia.github.io/Mana/
 import './App.scss';
 
 // Image assets

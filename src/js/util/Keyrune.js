@@ -41,4 +41,5 @@ export default class Keyrune extends Component {
 	}
 }
 
-// Cheatsheet: https://andrewgioia.github.io/Keyrune/cheatsheet.html
+// Icons:				https://andrewgioia.github.io/Keyrune/icons.html
+// Cheatsheet:	https://andrewgioia.github.io/Keyrune/cheatsheet.html

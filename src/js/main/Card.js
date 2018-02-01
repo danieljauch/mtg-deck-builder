@@ -1,6 +1,9 @@
 // Core Components:
 import React, { Component } from 'react';
 
+// JavaScript libraries and files:
+import Mana from '../js/Mana.js';
+
 export default class Card {
 	constructor (name, 	// String				| "Duress"
 			cmc, 						// int					| 1
@@ -30,7 +33,7 @@ export default class Card {
 		this.imageURL = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${id}`;
 		this.layout = layout;
 		this.legalities = this._formatLegalities(legalities);
-		this.manaCost = manaCost;
+		this.manaCost = this._makeManaCostIcons;
 		this.rarity = rarity;
 		this.text = text;
 		this.type = type;
@@ -38,17 +41,6 @@ export default class Card {
 	}
 
 	// Getters and setters
-	get manaCostImageSrcArray () {
-		let manaCostArray = this.manaCost.split('{','}');
-		let formattedOutput = [];
-
-		for (let i = 0, l = manaCostArray.length; i < l; i++) {
-			if (manaCostArray[i] != '')
-				formattedOutput.push(manaCostArray);
-		}
-
-		return formattedOutput;
-	}
 	get htmlVersion () {
 
 	}
@@ -74,6 +66,25 @@ export default class Card {
 		}
 
 		return formattedOutput;
+	}
+	_makeManaCostIcons () {
+		let manaCostArray = this.manaCost.split('{','}');
+		let formattedOutput = [];
+
+		for (let i = 0, l = manaCostArray.length; i < l; i++) {
+			if (manaCostArray[i] != '')
+				formattedOutput.push(manaCostArray[i]);
+		}
+
+		return (
+			<div className="mana-cost">
+				{
+					formattedOutput.map(mana => (
+						<Mana symbol={mana.symbol} />
+					))
+				}
+			</div>
+		);
 	}
 }
 const makeSymbolImageSrc = str => {
