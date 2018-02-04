@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // JavaScript libraries and files:
-import Mana from '../js/Mana.js';
+import Mana from '../util/Mana.js';
 
 export default class Card {
 	constructor (name, 	// String				| "Duress"

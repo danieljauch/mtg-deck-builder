@@ -6,7 +6,7 @@ export default class Mana extends Component {
 		super(props);
 	}
 
-	get _fullClassName (properties) {
+	set fullClassName (properties) {
 		let fullClassName = 'ms';
 		
 		if (properties.hasOwnProperty('symbol'))
@@ -37,7 +37,7 @@ export default class Mana extends Component {
 
 	render () {
 		return (
-			<i className={this._fullClassName(this.props)}></i>
+			<i className={this.fullClassName(this.props)}></i>
 		);
 	}
 }
