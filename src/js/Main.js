@@ -31,7 +31,9 @@ export default class Main extends Component {
 								stepNumber={step.stepNumber}
 								stepName={step.stepName}
 								subHeaderText={step.subHeaderText}
+								stepType={step.stepType}
 								stepChoices={step.stepChoices}
+								cardQuery={step.cardQuery}
 								isVisible={currentStep === step.stepNumber}
 								openModal={openModal}
 								makeChoice={makeChoice}

@@ -49,6 +49,9 @@ export default class App extends Component {
       allChosenCards: []
     }
 
+    // Global instance
+    this.instance = this;
+
     // Modal information
     this.modalListInfo = [
       // Step label modals
@@ -321,6 +324,7 @@ export default class App extends Component {
         stepNumber: 1, 
         stepName: 'Format', 
         subHeaderText: '', 
+        stepType: "choices",
         stepChoices: [
           {
             stepChoiceType: 'figure',
@@ -382,6 +386,7 @@ export default class App extends Component {
         stepNumber: 2,
         stepName: 'Deck Type',
         subHeaderText: '',
+        stepType: "choices",
         stepChoices: [
           {
             stepChoiceType: 'figure',
@@ -443,21 +448,25 @@ export default class App extends Component {
         stepNumber: 3,
         stepName: 'Lands',
         subHeaderText: '',
+        stepType: "cardlist",
         stepChoices: []
       }, {
         stepNumber: 4, 
         stepName: 'Creatures', 
         subHeaderText: '', 
+        stepType: "cardlist",
         stepChoices: []
       }, {
         stepNumber: 5, 
         stepName: 'Spells', 
         subHeaderText: '', 
+        stepType: "cardlist",
         stepChoices: []
       }, {
         stepNumber: 6, 
         stepName: 'Print / Export', 
-        subHeaderText: '', 
+        subHeaderText: '',
+        stepType: "print",
         stepChoices: []
       }
     ];
